@@ -1,0 +1,51 @@
+.main {
+    margin-top: 0rem;
+    background-color: rgb(20, 20, 110); 
+    border: 2px solid red;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: aliceblue;
+    margin-top: 2rem;
+}
+
+.link {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.nav-header {
+    color: aliceblue;
+    font-size: 1.8rem;
+    margin-top: 0rem;
+    margin-left: 8rem;
+}
+
+.nav-search {
+    /* margin-right: 10rem; */
+}
+
+input {
+    border-radius: 2rem;
+    /* padding: 0.5rem 6rem; */
+}
+
+input::placeholder {
+    text-align: left;
+}
+
+
+.nav-icons {
+    display: flex;
+    list-style: none;
+    margin-top: 0;
+    margin-right: 10rem;
+    cursor: pointer;
+}
+
+.nav-icons li {
+    padding: 0 0.5rem;
+}

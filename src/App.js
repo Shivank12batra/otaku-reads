@@ -5,7 +5,7 @@ import UserProfile from "./components/UserProfile";
 import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
 import Checkout from "./components/Checkout";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage";
 
 
