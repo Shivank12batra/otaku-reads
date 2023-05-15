@@ -25,12 +25,13 @@
 }
 
 .nav-search {
-    /* margin-right: 10rem; */
+    width: 20rem;
 }
 
 input {
+    width: 100%;
     border-radius: 2rem;
-    /* padding: 0.5rem 6rem; */
+    padding: 0.5rem;
 }
 
 input::placeholder {
