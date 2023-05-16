@@ -9,14 +9,16 @@ import {Link} from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div className='main'>
+    <div className='nav-container'>
       <nav className='navbar'>
         <Link to='/' className='link'>
           <h1 className='nav-header'>Otaku Reads</h1>
         </Link>
-        <form className='nav-search'>
-          <input type="text" name="searchProduct" placeholder="Search For Manga"/>
-        </form>
+        <div className='nav-search'>
+          <form className='search-form'>
+            <input type='text' name='searchProduct' placeholder='Search For Manga' />
+          </form>
+        </div>
         <div>
           <ul className='nav-icons'>
             <Link to='/' className='link'>

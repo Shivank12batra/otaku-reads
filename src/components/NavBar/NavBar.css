@@ -1,12 +1,11 @@
-.main {
+.nav-container {
     margin-top: 0rem;
     background-color: rgb(20, 20, 110); 
-    border: 2px solid red;
+    overflow: hidden;
 }
 
 .navbar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     color: aliceblue;
     margin-top: 2rem;
@@ -28,10 +27,10 @@
     width: 20rem;
 }
 
-input {
+.nav-search input {
     width: 100%;
     border-radius: 2rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.8rem;
 }
 
 input::placeholder {
@@ -49,4 +48,41 @@ input::placeholder {
 
 .nav-icons li {
     padding: 0 0.5rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav-header {
+        margin-left: 2rem;
+    }
+    .nav-icons {
+        margin-right: 2rem;
+    }
+    .nav-icons li {
+        padding: 0.3rem 0.2rem;
+    }
+    .nav-search {
+        position: relative;
+      }
+
+      .search-form {
+        display: block;
+        position: absolute;
+        margin-left: 2rem;
+        width: 12rem;
+        top: 10%;
+      }
+  }
+
+@media (max-width: 628px) {
+    .search-form {
+        margin-top: 2rem;
+        
+    }
+}
+
+@media (max-width: 360px) {
+    .search-form {
+        width: 10rem;
+    }
 }
