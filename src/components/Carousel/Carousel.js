@@ -3,7 +3,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { RiRadioButtonLine, RiRadioButtonFill } from 'react-icons/ri';
 import naruto from '../../assets/naruto.jpg';
 import haiykuu from '../../assets/haiykuu.jpg';
-import death_note_2 from '../../assets/death_note_2.jpg';
+import death_note from '../../assets/death_note.jpg';
 import './Carousel.css';
 
 const Carousel = () => {
@@ -11,18 +11,18 @@ const Carousel = () => {
   const [slides, setSlides] = useState([
     {
       imageUrl: naruto,
-      title: 'Slide 1',
-      description: 'Description for Slide 1',
+      title: 'Action-Packed Manga',
+      description: 'Unleash your adrenaline with this action-packed manga.',
     },
     {
       imageUrl: haiykuu,
-      title: 'Slide 2',
-      description: 'Description for Slide 2',
+      title: 'Slice-of-Life Manga',
+      description: 'Discover the warmth of friendship and love in this slice-of-life manga.',
     },
     {
-      imageUrl: death_note_2,
-      title: 'Slide 3',
-      description: 'Description for Slide 3',
+      imageUrl: death_note,
+      title: 'Fantasy Realm Manga',
+      description: 'Embark on a fantastical journey in this captivating manga saga.',
     },
   ]);
 
@@ -33,6 +33,12 @@ const Carousel = () => {
   const handlePreviousSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
   };
+
+  const changeSlide = (index) => {
+    if (index !== currentSlide) {
+        setCurrentSlide(index)
+    }
+  }
 
   useEffect(() => {
     const timer = setTimeout(handleNextSlide, 7000);
@@ -55,32 +61,27 @@ const Carousel = () => {
             className={`slide-image ${index === currentSlide ? 'active' : ''}`}
           />
         ))}
-        <div className="carousel-arrow right">
+      </div>
+      <div className="carousel-arrow right">
             <div className="arrow" onClick={handleNextSlide}>
             <FaArrowRight />
             </div>
-        </div>
-        <div className="carousel-arrow left">
+      </div>
+      <div className="carousel-arrow left">
             <div className="arrow" onClick={handlePreviousSlide}>
             <FaArrowLeft />
             </div>
-        </div>
-
-        {/* <div className='carousel-arrow-right'>
-            <div className="arrow" onClick={handleNextSlide}>
-                <FaArrowRight />
-            </div>
-        </div> */}
-        <div className="carousel-dots">
+      </div>
+      <div className="carousel-dots">
           {slides.map((_, index) => (
             <div
               key={index}
               className={`dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => changeSlide(index)}
             >
               {index === currentSlide ? <RiRadioButtonFill /> : <RiRadioButtonLine />}
             </div>
           ))}
-        </div>
       </div>
     </div>
   );
