@@ -51,7 +51,7 @@ const Carousel = () => {
       <div className="carousel-content">
         <h1>{slides[currentSlide].title}</h1>
         <p>{slides[currentSlide].description}</p>
-        <Link className="carousel-button">Visit Store</Link>
+        <Link to='/' className="carousel-button">Visit Store</Link>
       </div>
       <div className="carousel-image">
         {slides.map((slide, index) => (
