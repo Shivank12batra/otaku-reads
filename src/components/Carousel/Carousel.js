@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { RiRadioButtonLine, RiRadioButtonFill } from 'react-icons/ri';
 import naruto from '../../assets/naruto.jpg';
@@ -50,7 +51,7 @@ const Carousel = () => {
       <div className="carousel-content">
         <h1>{slides[currentSlide].title}</h1>
         <p>{slides[currentSlide].description}</p>
-        <button className="carousel-button">Visit Store</button>
+        <Link className="carousel-button">Visit Store</Link>
       </div>
       <div className="carousel-image">
         {slides.map((slide, index) => (

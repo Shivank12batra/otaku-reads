@@ -1,7 +1,7 @@
 .carousel {
     position: relative;
     width: 100%;
-    height: 30rem;
+    height: 36rem;
     overflow: hidden;
   }
   
@@ -24,11 +24,11 @@
   .carousel-content p {
     font-size: 1.6rem;
     margin-bottom: 2rem;
-    /* padding: 2rem; */
     width: 30%;
   }
   
   .carousel-button {
+    text-decoration: none;
     padding: 1rem 2rem;
     background-color: red;
     color: white;
@@ -113,5 +113,25 @@
   
   .dot.active {
     color: yellow;
+  }
+
+  @media (max-width: 540px) {
+    .carousel-content {
+        top: 30%;
+        left: 5%;
+    }
+    .arrow {
+        display: none;
+    }
+    .carousel-content p {
+        width: 50%;
+        font-size: 1.3rem;
+    }
+    .carousel-content h1 {
+        font-size: 2.1rem;
+    }
+    .carousel-button {
+        font-size: 1.1rem;
+    }
   }
   
