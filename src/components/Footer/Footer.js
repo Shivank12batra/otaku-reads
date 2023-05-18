@@ -8,9 +8,9 @@ const Footer = () => {
         <footer className='footer-class'>
             <h3 className='footer-header'>Contact Info</h3>
             <ul className='media-icons'>
-            <li className='media-icon'><a href=''><FaGithub/></a></li>
-            <li className='media-icon'><a href=''><FaTwitter/></a></li>
-            <li className='media-icon'><a href=''><FaLinkedin/></a></li>
+            <li className='media-icon'><a href='https://github.com/Shivank12batra'><FaGithub/></a></li>
+            <li className='media-icon'><a href='https://twitter.com/shvnk_12'><FaTwitter/></a></li>
+            <li className='media-icon'><a href='https://www.linkedin.com/in/shivank-batra-4594b9202/'><FaLinkedin/></a></li>
             </ul>
         </footer>
     </div>
