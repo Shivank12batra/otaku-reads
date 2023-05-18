@@ -21,7 +21,7 @@ const NavBar = () => {
         </div>
         <div>
           <ul className='nav-icons'>
-            <Link to='/' className='link'>
+            <Link to='/products' className='link'>
               <li>
               <FaBook size={25}/>
               </li>

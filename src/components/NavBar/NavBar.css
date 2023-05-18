@@ -87,3 +87,9 @@ input::placeholder {
         width: 10rem;
     }
 }
+
+@media (max-width: 324px) {
+    .search-form {
+        width: 7rem;
+    }
+}

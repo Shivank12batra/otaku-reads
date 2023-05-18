@@ -1,6 +1,7 @@
 import "./App.css";
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
+import ProductList from "./components/ProductList/ProductList";
 import UserProfile from "./components/UserProfile";
 import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
@@ -17,6 +18,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/products' element={<ProductList/>}/>
         <Route path='/profile' element={<UserProfile/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
