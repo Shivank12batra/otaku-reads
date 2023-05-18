@@ -1,0 +1,35 @@
+.footer-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: aliceblue;
+}
+
+.footer-header {
+    font-size: 1.5rem;
+}
+
+.media-icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-inline-start: 0;
+    margin-top: 0;
+}
+
+.media-icon {
+    margin: 0 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.media-icons a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.media-icons a:hover {
+    color: rgba(10, 20, 20, 23);
+}

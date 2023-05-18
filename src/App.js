@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
 import Checkout from "./components/Checkout";
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 import MockmanAPI from "./components/MockmanAPI";
 import NoPage from "./components/NoPage";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/mockman' element={<MockmanAPI/>}/>
         <Route path='*' element={<NoPage/>}/>
       </Routes>
+      <Footer/>
     </Router>
   )
 }
