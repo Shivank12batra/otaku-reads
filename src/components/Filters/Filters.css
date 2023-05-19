@@ -2,6 +2,10 @@
     margin: 2rem;
 }
 
+.header-container {
+    margin-bottom: 4rem;
+}
+
 .filters-header {
     display: inline;
     font-size: 1.2rem;
@@ -19,7 +23,7 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
     margin-left: 0;
-    padding: 0.2rem 2rem;
+    padding: 0.1rem 2rem;
     font-weight: bold;
     background-color: black;
     color: white;
@@ -36,7 +40,7 @@
     appearance: none;
     width: 4rem;
     height: 4rem;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: #fff;
     border: 2px solid #333;
     border-radius: 50%;
@@ -59,8 +63,8 @@
   h3 {
     /* width: 70%; */
     background-color: black;
-    padding: 0.1rem 2rem;
     color: aliceblue;
+    padding: 0.1rem 2rem;
   }
 
   label {

@@ -25,7 +25,14 @@ const ProductList = () => {
                 {products.map(({id, img, name, author, price, originalPrice, isBestSeller, category, rating}) => {
                     return (
                         <li key={id} className='product-card'>
-                            {name}
+                            <img src={img} alt={name}/>
+                            <span>{name}</span>
+                            <span>{author}</span>
+                            <span>{price}</span>
+                            <span>{originalPrice}</span>                            
+                            <span>{isBestSeller}</span>
+                            <span>{category}</span>                 
+                            <span>{rating}</span>
                         </li>
                     )
                 })}

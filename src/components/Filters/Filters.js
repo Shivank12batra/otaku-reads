@@ -5,8 +5,10 @@ import './Filters.css';
 const Filters = () => {
   return (
     <div className='filter-container'>
-        <h3 className='filters-header'>Filters</h3>
-        <span className='clear-filter'>Clear</span>
+        <div className='header-container'>
+          <h3 className='filters-header'>Filters</h3>
+          <span className='clear-filter'>Clear</span>
+        </div>
         <div className='price-slider'>
             <label for="slider">Price</label>
             <span>50</span>
