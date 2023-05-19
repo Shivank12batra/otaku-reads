@@ -18,9 +18,9 @@ const Category = () => {
     <div className='category-container'>
         <h1 className='category-header'>Categories</h1>
         {categories.length > 0 ? <div className='categories'>
-            {categories.map(({_id, img, categoryName, description}) => {
+            {categories.map(({id, img, categoryName, description}) => {
                 return (
-                    <li key={_id} className='category-card'>
+                    <li key={id} className='category-card'>
                         <img src={img} alt={categoryName}/>
                         <h2>{categoryName}</h2>
                         <p>{description}</p>

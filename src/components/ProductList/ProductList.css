@@ -1,0 +1,23 @@
+.product-container {
+    background-color: #f8f8f8;
+    display: flex;
+}
+
+.filters {
+    width: 20%;
+    position: relative;
+}
+
+.filters:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 2px;
+    background-color: grey;
+}
+
+.products {
+    margin-left: 4rem;
+}

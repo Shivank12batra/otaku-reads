@@ -1,0 +1,70 @@
+.filter-container {
+    margin: 2rem;
+}
+
+.filters-header {
+    display: inline;
+    font-size: 1.2rem;
+    margin-right: 4rem;
+}
+
+.clear-filter {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.price-slider label {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    padding: 0.2rem 2rem;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+.price-slider input {
+    width: 70%;
+    margin: 0 0.5rem;
+}
+
+/* Styling the slider thumb */
+.price-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Styling the slider track */
+  .price-slider input[type="range"]::-webkit-slider-runnable-track {
+    width: 50%;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 16px;
+  }
+  
+  /* Enhancing the slider track when thumb is dragged */
+  .price-slider input[type="range"]:active::-webkit-slider-runnable-track {
+    background-color: #aaa;
+  }
+
+  h3 {
+    /* width: 70%; */
+    background-color: black;
+    padding: 0.1rem 2rem;
+    color: aliceblue;
+  }
+
+  label {
+    margin-left: 1rem;
+  }
+  
+
