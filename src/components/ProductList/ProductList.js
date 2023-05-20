@@ -21,21 +21,18 @@ const ProductList = () => {
             <div className='filters'>
                 <Filters/>
             </div>
-            {products.length > 0 ? <div className='products'>
+            {products.length > 0 ? <div className='products-container'>
+                <h1 className=''>Showing All Products</h1>
+                <ul className='products'>
                 {products.map(({id, img, name, author, price, originalPrice, isBestSeller, category, rating}) => {
                     return (
                         <li key={id} className='product-card'>
                             <img src={img} alt={name}/>
-                            <span>{name}</span>
-                            <span>{author}</span>
-                            <span>{price}</span>
-                            <span>{originalPrice}</span>                            
-                            <span>{isBestSeller}</span>
-                            <span>{category}</span>                 
-                            <span>{rating}</span>
+                            <h2>{name}</h2>
                         </li>
                     )
                 })}
+                </ul>
             </div> : null}
         </div>
     </div>

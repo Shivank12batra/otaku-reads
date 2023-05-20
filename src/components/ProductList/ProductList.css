@@ -20,6 +20,22 @@
     background-color: grey;
 }
 
+.products-container {
+    width: 80%;
+    margin-left: 7rem;
+}
+
+.products-container h1 {
+    margin-left: 2rem;
+}
+
 .products {
-    margin-left: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    list-style: none;
+}
+
+.product-card img {
+    width: 10rem;
 }
