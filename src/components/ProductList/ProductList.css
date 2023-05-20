@@ -24,6 +24,7 @@
     width: 80%;
     margin-left: 3rem;
 }
+  
 
 .products-container h1 {
     margin-left: 2rem;
@@ -37,17 +38,51 @@
 }
 
 .product-card {
+    position: relative;
     /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; */
     width: 15rem;
-    height: 25rem;
+    /* height: 25rem; */
     padding: 0.3rem;
     background-color: #fff;
     border-radius: 0.5rem;
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
     cursor: pointer;
+  }
+
+  .best-seller {
+    position: absolute;
+    top: 7%;
+    left: -0.5rem;
+    z-index: 1;
+    padding: 0.2rem;
+    background-color: #ff9800;
+    transform: rotate(-45deg);
+  }
+  
+  .best-seller-text {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+  }
+  
+  
+  
+  
+
+  .heart-icon {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    color: grey;
+  }
+
+  .heart-icon:hover {
+    color: red;
   }
 
   .product-image {
@@ -59,27 +94,36 @@
   .product-image img {
     width: 60%;
     margin: 0 auto;
-    /* height: auto; */
+    height: auto;
+  }
+
+  .product-details {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .product-name {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #000;
-    margin-top: 2rem;
+    margin-bottom: 0rem;
+    /* margin-top: 2rem; */
   }
   
   .product-author {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #888;
     margin-top: 0;
+    margin-bottom: 0.2rem;
   }
   
   .product-price {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
+    /* display: flex;
+    align-items: center; */
+    font-size: 1.1rem;
     color: #000;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   
   .current-price {
@@ -98,7 +142,7 @@
   }
   
   .product-rating {
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
     text-align: center;
   }
   
@@ -117,7 +161,8 @@
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 0.8rem 1.6rem;
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 0.3rem;
     border-radius: 0.4rem;
     cursor: pointer;
     transition: background-color 0.3s ease;

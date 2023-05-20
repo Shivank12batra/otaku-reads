@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { BsStar, BsStarFill } from 'react-icons/bs';
+import { FaHeart } from 'react-icons/fa';
 import Filters from '../Filters/Filters'
 import './ProductList.css'
 
@@ -28,6 +29,15 @@ const ProductList = () => {
                 {products.map(({id, img, name, author, price, originalPrice, isBestSeller, isSoldOut, rating}) => {
                     return (
                         <li key={id} className='product-card'>
+                        {isBestSeller && (
+                            <div className="best-seller">
+                                <span className="best-seller-text">Best Seller</span>
+                            </div>
+                            )}
+
+                            <div className="heart-icon">
+                             <FaHeart />
+                            </div>
                             <div className="product-image">
                                 <img src={img} alt={name} />
                             </div>
