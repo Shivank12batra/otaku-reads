@@ -24,11 +24,30 @@ const ProductList = () => {
             {products.length > 0 ? <div className='products-container'>
                 <h1 className=''>Showing All Products</h1>
                 <ul className='products'>
-                {products.map(({id, img, name, author, price, originalPrice, isBestSeller, category, rating}) => {
+                {products.map(({id, img, name, author, price, originalPrice, isBestSeller, isSoldOut, rating}) => {
                     return (
                         <li key={id} className='product-card'>
-                            <img src={img} alt={name}/>
-                            <h2>{name}</h2>
+                            <div className="product-image">
+                                <img src={img} alt={name} />
+                            </div>
+                            <div className="product-details">
+                                <h3 className="product-name">{name}</h3>
+                                <p className="product-author">{author}</p>
+                                <div className="product-price">
+                                <span className="current-price">${price}</span>
+                                <span className="original-price">${originalPrice}</span>
+                                <span className="discount">({originalPrice - price}% OFF)</span>
+                                </div>
+                                <div className="product-rating">
+                                {[...Array(rating)].map((_, index) => (
+                                    <i className="fa fa-star filled" key={index}></i>
+                                ))}
+                                {[...Array(5 - rating)].map((_, index) => (
+                                    <i className="fa fa-star" key={index}></i>
+                                ))}
+                                </div>
+                                <button className="cart-button">Add to Cart</button>
+                            </div>
                         </li>
                     )
                 })}

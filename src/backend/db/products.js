@@ -16,7 +16,7 @@ export const products = [
     isBestSeller: true,
     isSoldOut: false,
     category: "Shounen",
-    rating: 4.6,
+    rating: 5,
   },
   {
     _id: uuid(),
@@ -28,7 +28,7 @@ export const products = [
     isBestSeller: true,
     isSoldOut: true,
     category: "Shounen",
-    rating: 4.8,
+    rating: 5,
   },
   {
     _id: uuid(),
@@ -40,7 +40,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 4.2,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -52,7 +52,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 3.8,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -76,7 +76,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Seinen",
-    rating: 3.7,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -88,7 +88,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Seinen",
-    rating: 2.8,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -100,7 +100,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: true,
     category: "Seinen",
-    rating: 4.1,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -112,7 +112,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shoujo",
-    rating: 3,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -124,7 +124,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shoujo",
-    rating: 3.6,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -136,7 +136,7 @@ export const products = [
     isBestSeller: true,
     isSoldOut: true,
     category: "Shounen",
-    rating: 4.5,
+    rating: 5,
   },
   {
     _id: uuid(),
@@ -148,7 +148,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Seinen",
-    rating: 3.6,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -160,7 +160,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 2.8,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -184,7 +184,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shoujo",
-    rating: 4.3,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -196,7 +196,7 @@ export const products = [
     isBestSeller: true,
     isSoldOut: false,
     category: "Seinen",
-    rating: 4,
+    rating: 5,
   },
   {
     _id: uuid(),
@@ -220,7 +220,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 1,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -232,7 +232,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shoujo",
-    rating: 2,
+    rating: 1,
   },
   {
     _id: uuid(),
@@ -244,7 +244,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 1.8,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -256,7 +256,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 3.2,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -268,7 +268,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 4.1,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -280,7 +280,7 @@ export const products = [
     isBestSeller: true,
     isSoldOut: true,
     category: "Sienen",
-    rating: 4.7,
+    rating: 5,
   },
   {
     _id: uuid(),
@@ -292,7 +292,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Seinen",
-    rating: 2.5,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -304,7 +304,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Seinen",
-    rating: 3.5,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -316,7 +316,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 1.5,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -328,7 +328,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Seinen",
-    rating: 3.2,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -340,7 +340,7 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 4.3,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -352,6 +352,6 @@ export const products = [
     isBestSeller: false,
     isSoldOut: false,
     category: "Shounen",
-    rating: 2.6
+    rating: 2
   },
 ];
