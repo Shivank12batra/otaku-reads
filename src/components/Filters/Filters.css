@@ -17,17 +17,17 @@
     cursor: pointer;
 }
 
-.price-slider label {
+/* .price-slider label {
     display: block;
     font-size: 1.2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    margin-left: 0;
-    padding: 0.1rem 2rem;
+    margin-left: -2rem;
+    padding: 0.1rem 0;
     font-weight: bold;
     background-color: black;
     color: white;
-}
+} */
 
 .price-slider input {
     width: 70%;
@@ -60,7 +60,7 @@
     background-color: #aaa;
   }
 
-  h3 {
+  .filter-container h3 {
     /* width: 70%; */
     background-color: black;
     color: aliceblue;

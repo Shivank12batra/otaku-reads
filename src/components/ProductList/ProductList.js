@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { BsStar, BsStarFill } from 'react-icons/bs';
 import Filters from '../Filters/Filters'
 import './ProductList.css'
 
@@ -40,10 +41,10 @@ const ProductList = () => {
                                 </div>
                                 <div className="product-rating">
                                 {[...Array(rating)].map((_, index) => (
-                                    <i className="fa fa-star filled" key={index}></i>
+                                    <BsStarFill className="fa fa-star filled" key={index}/>
                                 ))}
                                 {[...Array(5 - rating)].map((_, index) => (
-                                    <i className="fa fa-star" key={index}></i>
+                                    <BsStar className="fa fa-star" key={index}/>
                                 ))}
                                 </div>
                                 <button className="cart-button">Add to Cart</button>

@@ -10,7 +10,7 @@ const Filters = () => {
           <span className='clear-filter'>Clear</span>
         </div>
         <div className='price-slider'>
-            <label for="slider">Price</label>
+            <h3 for="slider">Price</h3>
             <span>50</span>
             <input type="range" min="50" max="500" id="slider"/>
             <span>500</span>
