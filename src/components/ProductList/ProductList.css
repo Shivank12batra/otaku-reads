@@ -5,7 +5,9 @@
 
 .filters {
     width: 20%;
-    position: relative;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 .filters:after {
