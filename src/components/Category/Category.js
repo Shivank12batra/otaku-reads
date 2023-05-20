@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import './Category.css'
 
 const Category = () => {
@@ -20,11 +21,11 @@ const Category = () => {
         {categories.length > 0 ? <div className='categories'>
             {categories.map(({id, img, categoryName, description}) => {
                 return (
-                    <li key={id} className='category-card'>
+                    <Link to='/products' key={id} className='category-card'>
                         <img src={img} alt={categoryName}/>
                         <h2>{categoryName}</h2>
                         <p>{description}</p>
-                    </li>
+                    </Link>
                 )
             })}
         </div> : null}

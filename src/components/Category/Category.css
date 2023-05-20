@@ -38,6 +38,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: black;
     width: 20rem; 
     height: 25rem;
     border: 1px solid #ccc;
