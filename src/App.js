@@ -8,6 +8,8 @@ import Wishlist from "./components/Wishlist";
 import Checkout from "./components/Checkout";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import Signup from "./components/Signup/Signup";
+import Login from "./components/Login/Login";
 import MockmanAPI from "./components/MockmanAPI";
 import NoPage from "./components/NoPage";
 
@@ -23,6 +25,8 @@ function App() {
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
         <Route path='/checkout' element={<Checkout/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/login' element={<Login/>}/>
         <Route path='/mockman' element={<MockmanAPI/>}/>
         <Route path='*' element={<NoPage/>}/>
       </Routes>
