@@ -1,6 +1,7 @@
 import "./App.css";
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ProductList from "./components/ProductList/ProductList";
 import UserProfile from "./components/UserProfile";
 import Cart from "./components/Cart";
@@ -21,10 +22,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<ProductList/>}/>
-        <Route path='/profile' element={<UserProfile/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/wishlist' element={<Wishlist/>}/>
-        <Route path='/checkout' element={<Checkout/>}/>
+        <Route exact element={<PrivateRoute/>}>
+          <Route path='/profile' element={<UserProfile/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/wishlist' element={<Wishlist/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
+        </Route>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/mockman' element={<MockmanAPI/>}/>
