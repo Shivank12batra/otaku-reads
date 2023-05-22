@@ -50,11 +50,8 @@ const LoginForm = () => {
                 toast.success('Successfully logged in', {
                     className: 'toast-success',
                     progressClassName: 'toast-progress',
-                    autoClose: 3000, // Duration in milliseconds (e.g., 3000 = 3 seconds)
                   })
-                console.log(location)
                 setTimeout(() => navigate(location?.state?.from?.pathname), 3000)
-                // navigate('/profile')
             }
         } catch (e) {
             console.log(e)
@@ -62,13 +59,42 @@ const LoginForm = () => {
                 className: 'toast-error',
                 progressClassName: 'toast-progress',
               });
-            
         }
     }
   }
 
-  const loginGuest = (e) => {
-
+  const loginGuest = async(e) => {
+    e.preventDefault();
+    setCreds(guestCreds)
+    console.log(creds.password)
+    try {
+        const data = await loginService(guestCreds)
+        const {foundUser, encodedToken} = data
+        if (!encodedToken) {
+            toast.error('Failed to log in', {
+                className: 'toast-error',
+                progressClassName: 'toast-progress',
+            });
+        } else {
+            setUser(foundUser)
+            setToken(encodedToken)
+            localStorage.setItem('user', JSON.stringify(foundUser))
+            localStorage.setItem('token', encodedToken)
+            console.log(localStorage.getItem('user'))
+            console.log(localStorage.getItem('token'))
+            toast.success('Successfully logged in', {
+                className: 'toast-success',
+                progressClassName: 'toast-progress',
+              })
+            setTimeout(() => navigate(location?.state?.from?.pathname), 3000)
+        }
+    } catch (e) {
+        console.log(e)
+        toast.error('Failed to log in', {
+            className: 'toast-error',
+            progressClassName: 'toast-progress',
+          });
+    }
   }
 
   return (
@@ -84,7 +110,7 @@ const LoginForm = () => {
 
         <button className="login-button" type="submit" onClick={loginUser}>Login</button>
 
-        <button className="guest-login-button" type="button">Login as Guest</button>
+        <button className="guest-login-button" type="submit" onClick={loginGuest}>Login as Guest</button>
 
         <p className="login-signup-link">
           Don't have an account? <Link to='/signup' className="blue-link">Sign Up</Link>
