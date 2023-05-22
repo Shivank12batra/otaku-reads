@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
 import MockmanAPI from "./components/MockmanAPI";
-import NoPage from "./components/NoPage";
+import NoPage from "./components/NoPage/NoPage";
 
 
 function App() {
