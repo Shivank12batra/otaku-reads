@@ -28,73 +28,48 @@ const LoginForm = () => {
     setCreds(prev => ({...prev, [fieldName]: e.target.value}))
   }
 
+  // helper function
+  const loginCheck = async(creds) => {
+    try {
+      const data = await loginService(creds)
+      console.log(data)
+      const {foundUser, encodedToken} = data
+      if (!encodedToken) {
+          toast.error('Failed to log in', {
+              className: 'toast-error',
+              progressClassName: 'toast-progress',
+          });
+      } else {
+          setUser(foundUser)
+          setToken(encodedToken)
+          localStorage.setItem('user', JSON.stringify(foundUser))
+          localStorage.setItem('token', encodedToken)
+          console.log(localStorage.getItem('user'))
+          console.log(localStorage.getItem('token'))
+          toast.success('Successfully logged in', {
+              className: 'toast-success',
+              progressClassName: 'toast-progress',
+            })
+          setTimeout(() => navigate(location?.state?.from?.pathname), 3000)
+        }
+    } catch (e) {
+      console.log(e)
+      toast.error('Failed to log in', {
+          className: 'toast-error',
+          progressClassName: 'toast-progress',
+        });
+    }
+  }
+
   const loginUser = async(e) => {
     e.preventDefault();
-    if (creds.email && creds.password !== "") {
-        try {
-            const data = await loginService(creds)
-            console.log(data)
-            const {foundUser, encodedToken} = data
-            if (!encodedToken) {
-                toast.error('Failed to log in', {
-                    className: 'toast-error',
-                    progressClassName: 'toast-progress',
-                });
-            } else {
-                setUser(foundUser)
-                setToken(encodedToken)
-                localStorage.setItem('user', JSON.stringify(foundUser))
-                localStorage.setItem('token', encodedToken)
-                console.log(localStorage.getItem('user'))
-                console.log(localStorage.getItem('token'))
-                toast.success('Successfully logged in', {
-                    className: 'toast-success',
-                    progressClassName: 'toast-progress',
-                  })
-                setTimeout(() => navigate(location?.state?.from?.pathname), 3000)
-            }
-        } catch (e) {
-            console.log(e)
-            toast.error('Failed to log in', {
-                className: 'toast-error',
-                progressClassName: 'toast-progress',
-              });
-        }
-    }
+    loginCheck(creds);
   }
 
   const loginGuest = async(e) => {
     e.preventDefault();
     setCreds(guestCreds)
-    console.log(creds.password)
-    try {
-        const data = await loginService(guestCreds)
-        const {foundUser, encodedToken} = data
-        if (!encodedToken) {
-            toast.error('Failed to log in', {
-                className: 'toast-error',
-                progressClassName: 'toast-progress',
-            });
-        } else {
-            setUser(foundUser)
-            setToken(encodedToken)
-            localStorage.setItem('user', JSON.stringify(foundUser))
-            localStorage.setItem('token', encodedToken)
-            console.log(localStorage.getItem('user'))
-            console.log(localStorage.getItem('token'))
-            toast.success('Successfully logged in', {
-                className: 'toast-success',
-                progressClassName: 'toast-progress',
-              })
-            setTimeout(() => navigate(location?.state?.from?.pathname), 3000)
-        }
-    } catch (e) {
-        console.log(e)
-        toast.error('Failed to log in', {
-            className: 'toast-error',
-            progressClassName: 'toast-progress',
-          });
-    }
+    loginCheck(guestCreds)
   }
 
   return (
