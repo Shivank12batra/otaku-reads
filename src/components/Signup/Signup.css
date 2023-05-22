@@ -30,6 +30,14 @@
     border-radius: 4px;
     margin-bottom: 1rem;
   }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
   
   .signup-button {
     /* display: block; */

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/Auth/AuthContext';
+import { loginSchema } from '../../backend/utils/ValidationSchema/loginSchema';
 import { loginService } from '../../backend/utils/loginService';
 import './Login.css';
 import { toast, ToastContainer } from 'react-toastify';
@@ -19,6 +20,7 @@ const LoginForm = () => {
   }
 
   const [creds, setCreds] = useState(loginValues)
+  const [error, setError] = useState('')
   const {setToken, setUser} = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
@@ -63,7 +65,12 @@ const LoginForm = () => {
 
   const loginUser = async(e) => {
     e.preventDefault();
-    loginCheck(creds);
+    const {isValid, msg} = loginSchema(creds);
+    if (isValid) {
+      loginCheck(creds);
+    } else {
+      setError(msg)
+    }
   }
 
   const loginGuest = async(e) => {
@@ -82,6 +89,8 @@ const LoginForm = () => {
 
         <label className="login-label">Password:</label>
         <input className="login-input" type="password" value={creds.password} onChange={(e) => updateCreds(e, "password")} required />
+
+        <div className='error-message'>{error}</div>
 
         <button className="login-button" type="submit" onClick={loginUser}>Login</button>
 
