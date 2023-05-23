@@ -67,6 +67,7 @@ const LoginForm = () => {
     e.preventDefault();
     const {isValid, msg} = loginSchema(creds);
     if (isValid) {
+      setError('');
       loginCheck(creds);
     } else {
       setError(msg)

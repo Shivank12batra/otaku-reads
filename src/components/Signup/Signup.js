@@ -29,6 +29,7 @@ const SignupForm = () => {
     e.preventDefault();
     const {isValid, msg} = signupSchema(creds)
     if (isValid) {
+      setError('')
       try {
         const {confirmPassword, ...signupCreds} = creds
         console.log(signupCreds)
