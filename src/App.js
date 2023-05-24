@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ProductList from "./components/ProductList/ProductList";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 import UserProfile from "./components/UserProfile";
 import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
@@ -22,16 +23,17 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<ProductList/>}/>
+        <Route path='/products/:id' element={<ProductDetail/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/mockman' element={<MockmanAPI/>}/>
+        <Route path='*' element={<NoPage/>}/>
         <Route exact element={<PrivateRoute/>}>
           <Route path='/profile' element={<UserProfile/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/wishlist' element={<Wishlist/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
         </Route>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/mockman' element={<MockmanAPI/>}/>
-        <Route path='*' element={<NoPage/>}/>
       </Routes>
       <Footer/>
     </Router>
