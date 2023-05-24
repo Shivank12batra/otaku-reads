@@ -48,9 +48,10 @@
   }
 
   .product-card.out-of-stock {
-    /* opacity: 0.5; */
     cursor: not-allowed;
-    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: rgba(0, 0, 0, 0.8);
+     */
+    background-color: #555555;
   }
 
   .product-card.out-of-stock img {

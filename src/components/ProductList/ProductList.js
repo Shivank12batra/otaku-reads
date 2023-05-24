@@ -29,6 +29,7 @@ const ProductList = () => {
                 <h1 className=''>Showing All Products</h1>
                 <ul className='products'>
                   {products.map(({ _id, img, name, author, price, originalPrice, isBestSeller, isSoldOut, rating }) => {
+                    const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
                     return (
                       <li key={_id} className={`product-card ${isSoldOut ? 'out-of-stock' : ''}`}>
                         <Link to={`/products/${_id}`} className='product-link'>
@@ -47,9 +48,9 @@ const ProductList = () => {
                             <h3 className="product-name">{name}</h3>
                             <p className="product-author">{author}</p>
                             <div className="product-price">
-                              <span className="current-price">${price}</span>
-                              <span className="original-price">${originalPrice}</span>
-                              <span className="discount">({originalPrice - price}% OFF)</span>
+                              <span className="current-price">₹{price}</span>
+                              <span className="original-price">₹{originalPrice}</span>
+                              <span className="discount">({discount}% OFF)</span>
                             </div>
                             <div className="product-rating">
                               {[...Array(rating)].map((_, index) => (
