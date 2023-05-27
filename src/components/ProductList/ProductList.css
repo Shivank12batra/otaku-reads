@@ -36,4 +36,32 @@
     grid-gap: 1rem;
     list-style: none;
 }
+
+.product-link {
+    text-decoration: none;
+}
+
+@media (max-width: 868px) {
+    .filters {
+        display: none;
+    }
+    .products-container {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 628px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 350px) {
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+
   
