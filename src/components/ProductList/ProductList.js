@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
 import Filters from '../Filters/Filters'
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductList.css'
@@ -28,9 +27,9 @@ const ProductList = () => {
                 <h1 className=''>Showing All Products</h1>
                 <ul className='products'>
                   {products.map(product => {
-                    return !product.isSoldOut ? (
-                      <Link to={`/products/${product._id}`} className='product-link'><ProductCard {...product}/></Link>
-                    ) : <ProductCard {...product}/>
+                    return (
+                      <ProductCard {...product}/>
+                    )
                   })}
                 </ul>
               </div>

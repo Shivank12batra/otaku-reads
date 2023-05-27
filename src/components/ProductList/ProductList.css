@@ -37,10 +37,6 @@
     list-style: none;
 }
 
-.product-link {
-    text-decoration: none;
-}
-
 @media (max-width: 868px) {
     .filters {
         display: none;
