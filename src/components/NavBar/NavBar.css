@@ -5,6 +5,14 @@
     overflow: hidden;
 }
 
+.hamburger-icon {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 3rem;
+    left: 0.5rem;
+  }
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -52,9 +60,22 @@ input::placeholder {
 }
 
 /* Media queries for responsiveness */
+@media (max-width: 868px) {
+    .hamburger-icon {
+         display: inline;
+         top: 1rem; 
+    }
+    .nav-header {
+        margin-left: 4rem;
+    }
+    .nav-icons {
+        margin-right: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-header {
-        margin-left: 2rem;
+        margin-left: 3rem;
     }
     .nav-icons {
         margin-right: 2rem;

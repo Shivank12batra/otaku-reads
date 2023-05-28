@@ -1,15 +1,21 @@
 import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaBook } from 'react-icons/fa';
 import { RiUserLine } from 'react-icons/ri';
 import { IoHeartOutline } from 'react-icons/io5';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './NavBar.css';
-import {Link} from 'react-router-dom';
 
 
 const NavBar = () => {
+
+  const location = useLocation();
+  const isProductList = location.pathname === '/products'
+
   return (
     <div className='nav-container'>
+      {isProductList && <GiHamburgerMenu className="hamburger-icon" size={28}/>}
       <nav className='navbar'>
         <Link to='/' className='link'>
           <h1 className='nav-header'>Otaku Reads</h1>
