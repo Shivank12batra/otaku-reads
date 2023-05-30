@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
+import { useData } from '../../context/data/DataContext';
 import Filters from '../Filters/Filters'
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductList.css'
 
 const ProductList = () => {
+    const {showFilters} = useData()
     const [products, setProducts] = useState([])
     
     const fetchData = async() => {
@@ -19,7 +21,7 @@ const ProductList = () => {
     return (
         <div>
           <div className='product-container'>
-            <div className='filters'>
+            <div className={`filters ${showFilters ? 'show-filters' : ''}`}>
               <Filters/>
             </div>
             {products.length > 0 ? (
@@ -28,7 +30,7 @@ const ProductList = () => {
                 <ul className='products'>
                   {products.map(product => {
                     return (
-                      <ProductCard {...product}/>
+                      <ProductCard key={product._id} {...product}/>
                     )
                   })}
                 </ul>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { useAuth } from '../../context/Auth/AuthContext';
+import { useAuth } from '../../context/auth/AuthContext';
 import { loginSchema } from '../../backend/utils/ValidationSchema/loginSchema';
 import { loginService } from '../../backend/utils/loginService';
 import './Login.css';

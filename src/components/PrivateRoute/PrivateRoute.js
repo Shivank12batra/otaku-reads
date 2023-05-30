@@ -1,6 +1,6 @@
 import React from 'react'
 import {Navigate, Outlet, useLocation} from 'react-router-dom'
-import { useAuth } from '../../context/Auth/AuthContext'
+import { useAuth } from '../../context/auth/AuthContext'
 
 const PrivateRoute = () => {
     const {token} = useAuth()
