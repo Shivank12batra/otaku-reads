@@ -1,19 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { useData } from '../../context/data/DataContext'
 import './Category.css'
 
 const Category = () => {
-    const [categories, setCategories] = useState([])
-
-    const fetchData = async() => {
-        const res = await fetch('/api/categories')
-        const data = await res.json()
-        setCategories(data.categories)
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
+  const {categories} = useData()
 
   return (
     <div className='category-container'>

@@ -1,22 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { useData } from '../../context/data/DataContext';
 import Filters from '../Filters/Filters'
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductList.css'
 
 const ProductList = () => {
-    const {showFilters} = useData()
-    const [products, setProducts] = useState([])
-    
-    const fetchData = async() => {
-        const res = await fetch('/api/products')
-        const data = await res.json()
-        setProducts(data.products)
-    }
+    const {showFilters, products} = useData()
 
-    useEffect(() => {
-        fetchData()
-    })
 
     return (
         <div>
