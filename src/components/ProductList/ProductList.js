@@ -7,7 +7,6 @@ import './ProductList.css'
 const ProductList = () => {
     const {showFilters, products} = useData()
 
-
     return (
         <div>
           <div className='product-container'>

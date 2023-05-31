@@ -1,6 +1,7 @@
 .product-container {
     background-color: #f8f8f8;
     display: flex;
+    margin-top: 5rem;
 }
 
 .filters {

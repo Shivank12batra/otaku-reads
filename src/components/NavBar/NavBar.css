@@ -1,6 +1,9 @@
 .nav-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
     margin-top: 0rem;
-    background-color: rgb(20, 20, 110); 
     background-color: black;
     overflow: hidden;
 }
