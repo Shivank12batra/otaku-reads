@@ -1,4 +1,4 @@
-export const sortData = (products, sortBy, priceRange, sortByRating) => {
+export const filterData = (products, sortBy, priceRange, category, filterByRating) => {
     switch (sortBy) {
         case "CLEAR":
             break;
@@ -11,11 +11,23 @@ export const sortData = (products, sortBy, priceRange, sortByRating) => {
         default:
             products = products
     }
-    if (sortByRating) {
-        products = products.filter(({rating}) => rating > sortByRating)
-    }
     if (priceRange) {
         products = products.filter(({price}) => price <= +priceRange)
+    }
+    if (filterByRating) {
+        products = products.filter(({rating}) => rating >= filterByRating)
+    }
+    for (const cat in category) {
+        if (!category[cat]) {
+            products = products.filter((products) => products.category !== cat)
+        }
+    }
+    return products
+}
+
+export const sortData = (products, category) => {
+    for (const cat in category) {
+        return products.filter(({category}) => category === cat)
     }
     return products
 }
