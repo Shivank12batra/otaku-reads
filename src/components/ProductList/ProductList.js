@@ -1,13 +1,17 @@
 import React from 'react'
 import { useData } from '../../context/data/DataContext';
 import { filterData } from '../../utils';
-import Filters from '../Filters/Filters'
+import Loader from '../Loader/Loader';
+import Filters from '../Filters/Filters';
+import Error from '../Error/Error';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductList.css'
 
 const ProductList = () => {
     const {
-      showFilters, 
+      showFilters,
+      loading,
+      error,
       products,
       sortBy,
       priceRange,
@@ -17,11 +21,21 @@ const ProductList = () => {
 
       const filteredProducts = filterData([...products], sortBy, priceRange, category, filterByRating)
 
+
     return (
         <div>
-          <div className='product-container'>
-            <div className={`filters ${showFilters ? 'show-filters' : ''}`}>
+        {loading && <Loader/>}
+          <div className='popup-container'>
+           <div className={`popup ${showFilters ? 'show-filters' : ''}`}>
+           <Filters/>
+           </div>
+          </div>
+          <div className='productList-container'>
+            <div className='filters'>
               <Filters/>
+            </div>
+            <div className='productList-container'>
+             {error && <Error/>}
             </div>
             {filteredProducts.length > 0 ? (
               <div className='products-container'>

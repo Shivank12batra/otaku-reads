@@ -1,4 +1,12 @@
-.product-container {
+body {
+    /* overflow-y: hidden; */
+}
+
+.popup {
+    display: none
+}
+
+.productList-container {
     background-color: #f8f8f8;
     display: flex;
     margin-top: 5rem;
@@ -39,32 +47,8 @@
 }
 
 @media (max-width: 868px) {
-    .product-container {
-        position: relative;
-    }
     .filters {
-        width: 300px;
-        position: fixed;
-        left: -100%;
-        top: 0;
-        height: 100vh;
-        background-color: rgba(222, 210, 210, 0.8); 
-        z-index: 10;
-        /* overflow-y: auto; */
-        transition: left 0.3s ease-in-out;
-    }
-    .show-filters {
-        left: 0;
-        position: sticky;
-    }
-    .products-container {
-        border: 2px solid red;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .show-filters ~ .products-container {
-        pointer-events: none;
+        display: none
     }
 }
 

@@ -8,7 +8,7 @@ export const initialState = {
         'Seinen' : true,
         'Shoujo' : true
     },
-    filterByRating: 1,
+    filterByRating: 0,
 }
 
 export const dataReducer = (state, action) => {
@@ -42,7 +42,7 @@ export const dataReducer = (state, action) => {
                 sortBy: "",
                 priceRange: "500",
                 category: state.category,
-                filterByRating: 1,
+                filterByRating: 0,
             }
         default:
             return {...state}

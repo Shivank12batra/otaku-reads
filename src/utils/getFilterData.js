@@ -15,7 +15,7 @@ export const filterData = (products, sortBy, priceRange, category, filterByRatin
         products = products.filter(({price}) => price <= +priceRange)
     }
     if (filterByRating) {
-        products = products.filter(({rating}) => rating >= filterByRating)
+        products = products.filter(({rating}) => rating === filterByRating)
     }
     for (const cat in category) {
         if (!category[cat]) {

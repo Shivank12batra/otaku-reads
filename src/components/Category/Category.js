@@ -2,10 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useData } from '../../context/data/DataContext'
 import { ACTION_TYPE } from '../../utils/constant'
+import Error from '../Error/Error'
 import './Category.css'
 
 const Category = () => {
-  const {categories, category, dataDispatch} = useData()
+  const {error, categories, category, dataDispatch} = useData()
+  console.log(error)
 
   const setCategory = (catName) => {
     for (const cat in category) {
@@ -20,6 +22,8 @@ const Category = () => {
         payload: category
     })
   }
+
+  if (error) return <Error/>
 
   return (
     <div className='category-container'>

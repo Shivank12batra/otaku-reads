@@ -89,14 +89,14 @@ const Filters = () => {
             <label for="option2">High To Low</label>
         </div>
         </div>
-        {/* <div>
+        <div>
             <h3>Ratings</h3>
             <span><BsStar/></span>
             <span><BsStar/></span>
             <span><BsStar/></span>
             <span><BsStar/></span>
             <span><BsStar/></span>
-        </div> */}
+        </div>
     </div>
   )
 }
