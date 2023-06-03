@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';

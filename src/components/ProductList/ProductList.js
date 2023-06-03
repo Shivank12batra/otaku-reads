@@ -1,6 +1,6 @@
 import React from 'react'
 import { useData } from '../../context/data/DataContext';
-import { filterData } from '../../utils';
+import { filterData } from '../../utils'
 import Loader from '../Loader/Loader';
 import Filters from '../Filters/Filters';
 import Error from '../Error/Error';
