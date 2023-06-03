@@ -279,7 +279,7 @@ export const products = [
     originalPrice: 499,
     isBestSeller: true,
     isSoldOut: true,
-    category: "Sienen",
+    category: "Seinen",
     rating: 5,
   },
   {
