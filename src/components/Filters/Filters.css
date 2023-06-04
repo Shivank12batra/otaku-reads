@@ -17,18 +17,6 @@
     cursor: pointer;
 }
 
-/* .price-slider label {
-    display: block;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    margin-left: -2rem;
-    padding: 0.1rem 0;
-    font-weight: bold;
-    background-color: black;
-    color: white;
-} */
-
 .price-slider input {
     width: 70%;
     margin: 0 0.5rem;
@@ -53,6 +41,10 @@
     height: 12px;
     background-color: #ddd;
     border-radius: 16px;
+  }
+
+  input[type='radio']:checked {
+    background-color: blue;
   }
   
   /* Enhancing the slider track when thumb is dragged */

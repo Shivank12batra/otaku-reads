@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { useData } from '../../context/data/DataContext';
-import { filterData } from '../../utils'
+import { filterData } from '../../utils';
 import Loader from '../Loader/Loader';
 import Filters from '../Filters/Filters';
 import Error from '../Error/Error';
 import ProductCard from '../ProductCard/ProductCard';
-import './ProductList.css'
+import './ProductList.css';
 
 const ProductList = () => {
     const {

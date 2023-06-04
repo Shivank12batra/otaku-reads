@@ -52,21 +52,21 @@ const Filters = () => {
                 <input type="checkbox"
                  id="shounen"
                  checked={category['Shounen']}
-                 onChange={(e) => changeInputHandler(ACTION_TYPE.CATEGORY, 'Shounen', e)}/>
+                 onClick={(e) => changeInputHandler(ACTION_TYPE.CATEGORY, 'Shounen', e)}/>
                 <label for="shounen">Shounen</label>
             </div>
             <div className='option'>
                 <input type="checkbox"
                  id="seinen"
                  checked={category['Seinen']}
-                 onChange={(e) => changeInputHandler(ACTION_TYPE.CATEGORY, 'Seinen', e)}/>
+                 onClick={(e) => changeInputHandler(ACTION_TYPE.CATEGORY, 'Seinen', e)}/>
                 <label for="seinen">Seinen</label>
             </div>
             <div>
                 <input type="checkbox"
                  id="shoujo"
                  checked={category['Shoujo']}
-                 onChange={(e) => changeInputHandler(ACTION_TYPE.CATEGORY, 'Shoujo', e)}/>
+                 onClick={(e) => changeInputHandler(ACTION_TYPE.CATEGORY, 'Shoujo', e)}/>
                 <label for="shoujo">Shoujo</label>
             </div>
         </div>
@@ -76,16 +76,14 @@ const Filters = () => {
             <input type="radio"
              id="option1"
               name="options"
-              checked={sortBy === 'LOW_TO_HIGH'}
-              onChange={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, 'LOW_TO_HIGH', e)}/>
+              onClick={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, 'LOW_TO_HIGH', e)}/>
             <label for="option1">Low To High</label>
         </div>
         <div>
             <input type="radio"
              id="option2"
               name="options"
-              checked={sortBy === 'HIGH_TO_LOW'}
-              onChange={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, 'HIGH_TO_LOW', e)}/>
+              onClick={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, 'HIGH_TO_LOW', e)}/>
             <label for="option2">High To Low</label>
         </div>
         </div>
