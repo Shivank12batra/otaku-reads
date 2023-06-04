@@ -1,9 +1,5 @@
-body {
-    /* overflow-y: hidden; */
-}
-
 .popup {
-    display: none
+    display: none;
 }
 
 .productList-container {

@@ -24,6 +24,11 @@ const ProductDetail = () => {
       <div className="custom-card-container">
         <div className='img-container'>
          <img src={img} alt={name} className="custom-product-img" />
+         {isBestSeller && (
+            <div className="custom-best-seller">
+              <span className="custom-best-seller-text">Best Seller</span>
+            </div>
+          )}
         </div>
 
       <div className="custom-product-details">

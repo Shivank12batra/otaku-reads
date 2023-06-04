@@ -22,38 +22,30 @@
     margin: 0 0.5rem;
 }
 
-/* Styling the slider thumb */
+
 .price-slider input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 4rem;
     height: 4rem;
-    /* margin: 0 auto; */
     background-color: #fff;
     border: 2px solid #333;
     border-radius: 50%;
     cursor: pointer;
   }
-  
-  /* Styling the slider track */
+
   .price-slider input[type="range"]::-webkit-slider-runnable-track {
     width: 50%;
     height: 12px;
     background-color: #ddd;
     border-radius: 16px;
   }
-
-  input[type='radio']:checked {
-    background-color: blue;
-  }
   
-  /* Enhancing the slider track when thumb is dragged */
   .price-slider input[type="range"]:active::-webkit-slider-runnable-track {
     background-color: #aaa;
   }
 
   .filter-container h3 {
-    /* width: 70%; */
     background-color: black;
     color: aliceblue;
     padding: 0.1rem 2rem;
