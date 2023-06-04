@@ -24,10 +24,3 @@ export const filterData = (products, sortBy, priceRange, category, filterByRatin
     }
     return products
 }
-
-export const sortData = (products, category) => {
-    for (const cat in category) {
-        return products.filter(({category}) => category === cat)
-    }
-    return products
-}

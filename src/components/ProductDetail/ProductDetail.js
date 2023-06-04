@@ -9,11 +9,19 @@ import './ProductDetail.css'
 
 const ProductDetail = () => {
   const {id} = useParams()
-  const {navigate} = useNavigate()
+  const navigate = useNavigate()
   const {token} = useAuth()
   const {products} = useData()
 
   const product = products.find((product) => product._id === parseInt(id))
+
+  const addToCartHandler = () => {
+    token ? console.log('cart') : navigate('/login')
+  }
+
+  const addToWishlistHandler = () => {
+    token ? console.log('wishlist') : navigate('/login')
+  }
 
   if (!product) return <div className='not-found'><h2>Product not found!</h2></div>
   const {img, name, author, price, originalPrice, isBestSeller, category, rating} = product 
@@ -91,8 +99,8 @@ const ProductDetail = () => {
         </div>
 
         <div className="custom-product-buttons">
-          <button className="custom-cart-btn">Add To Cart</button>
-          <button className="custom-wishlist-btn">Add To Wishlist</button>
+          <button className="custom-cart-btn" onClick={addToCartHandler}>Add To Cart</button>
+          <button className="custom-wishlist-btn" onClick={addToWishlistHandler}>Add To Wishlist</button>
         </div>
       </div>
     </div>

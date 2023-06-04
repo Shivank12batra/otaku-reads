@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/auth/AuthContext';
-import { signupSchema } from '../../backend/utils/ValidationSchema/signupSchema';
-import { signupService } from '../../backend/utils/signupService';
+import {signupSchema} from '../../services/ValidationSchema/signupSchema';
+import {signupService} from '../../services/signup/signupService';
 import './Signup.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

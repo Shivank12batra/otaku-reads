@@ -9,6 +9,9 @@ export const initialState = {
         'Shoujo' : true
     },
     filterByRating: 0,
+    cart: [],
+    wishlist: [],
+    address: [],
 }
 
 export const dataReducer = (state, action) => {
@@ -39,6 +42,7 @@ export const dataReducer = (state, action) => {
                 state.category[cat] = true
             }
             return {
+                ...state,
                 sortBy: "",
                 priceRange: "500",
                 category: state.category,
