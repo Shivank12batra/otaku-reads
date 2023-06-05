@@ -48,6 +48,31 @@ export const dataReducer = (state, action) => {
                 category: state.category,
                 filterByRating: 0,
             }
+        case ACTION_TYPE.ADD_TO_CART:
+            return {
+                ...state,
+                cart: [...action.payload]
+            }
+        case ACTION_TYPE.REMOVE_FROM_CART:
+            return {
+                ...state,
+                cart: [...action.payload]
+            }
+        case ACTION_TYPE.CLEAR_CART:
+            return {
+                ...state,
+                cart: []
+            }
+        case ACTION_TYPE.ADD_TO_WISHLIST:
+            return {
+                ...state,
+                wishlist: [...action.payload]
+            }
+        case ACTION_TYPE.REMOVE_FROM_WISHLIST:
+            return {
+                ...state,
+                wishlist: [...action.payload]
+            }
         default:
             return {...state}
     }

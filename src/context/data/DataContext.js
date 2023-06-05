@@ -12,7 +12,7 @@ export const DataProvider = ({children}) => {
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
 
-    console.log(state.category)
+    console.log(state)
 
     const fetchCategoriesData = async() => {
         try {
