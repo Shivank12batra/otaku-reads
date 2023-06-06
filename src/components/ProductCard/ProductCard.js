@@ -27,9 +27,6 @@ const ProductCard = ({ product }) => {
    const {dataDispatch, cart, wishlist} = useData()
    const { token } = useAuth()
    const [disableBtn, setDisableBtn] = useState(false)
-
-   const inCart = isProductInCart(cart, _id)
-   const inWishlist = isProductInWishlist(wishlist, _id)
    const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
 
    const addToCartHandler = (e) => {
@@ -49,7 +46,6 @@ const ProductCard = ({ product }) => {
       : addToWishlist(dataDispatch, product, token, toast)
     : navigate('/login')
    }
-   console.log(disableBtn)
 
     return (
         !isSoldOut ? (

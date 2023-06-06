@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {useParams, useNavigate} from 'react-router-dom';
+import { useAuth } from '../../context/auth/AuthContext';
+import { useData } from '../../context/data/DataContext';
+import { addToCart, addToWishlist } from '../../services';
+import { isProductInCart, isProductInWishlist } from '../../utils/cartUtils';
 import { BsStar, BsStarFill } from 'react-icons/bs'
 import { FaBolt } from 'react-icons/fa'
-import { useAuth } from '../../context/auth/AuthContext'
-import { useData } from '../../context/data/DataContext'
-import { useParams, useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './ProductDetail.css'
 
 
@@ -11,24 +15,34 @@ const ProductDetail = () => {
   const {id} = useParams()
   const navigate = useNavigate()
   const {token} = useAuth()
-  const {products} = useData()
+  const {dataDispatch, cart, wishlist, products } = useData()
+  const [disableBtn, setDisableBtn] = useState(false)
 
   const product = products.find((product) => product._id === parseInt(id))
 
   const addToCartHandler = () => {
-    token ? console.log('cart') : navigate('/login')
+    token 
+    ? isProductInCart(cart, _id)
+      ? navigate('/cart')
+      : addToCart(dataDispatch, product, token, toast, setDisableBtn)
+    : navigate('/login')
   }
 
   const addToWishlistHandler = () => {
-    token ? console.log('wishlist') : navigate('/login')
+    token 
+    ? isProductInWishlist(wishlist, _id)
+      ? navigate('/wishlist')
+      : addToWishlist(dataDispatch, product, token, toast)
+    : navigate('/login')
   }
 
   if (!product) return <div className='not-found'><h2>Product not found!</h2></div>
-  const {img, name, author, price, originalPrice, isBestSeller, category, rating} = product 
+  const {_id, img, name, author, price, originalPrice, isBestSeller, category, rating} = product 
   const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
 
   return (
     <div className='card-container'>
+      <ToastContainer/>
       <div className="custom-card-container">
         <div className='img-container'>
          <img src={img} alt={name} className="custom-product-img" />
@@ -98,9 +112,13 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        <div className="custom-product-buttons">
-          <button className="custom-cart-btn" onClick={addToCartHandler}>Add To Cart</button>
-          <button className="custom-wishlist-btn" onClick={addToWishlistHandler}>Add To Wishlist</button>
+        <div className={`${disableBtn ? 'disable-btn' : ''} custom-product-buttons`}>
+          <button className="custom-cart-btn" onClick={addToCartHandler}>
+            {isProductInCart(cart, _id) ? 'Go To Cart': 'Add To Cart'}
+            </button>
+          <button className="custom-wishlist-btn" onClick={addToWishlistHandler}>
+          {isProductInWishlist(wishlist, _id) ? 'Go To Wishlist': 'Add To Wishlist'}
+          </button>
         </div>
       </div>
     </div>
