@@ -31,8 +31,9 @@
 }
   
 
-.products-container h1 {
+.products-header {
     margin-left: 2rem;
+    /* font-size: 1.1rem; */
 }
 
 .products {

@@ -39,7 +39,7 @@ const ProductList = () => {
             </div>
             {filteredProducts.length > 0 ? (
               <div className='products-container'>
-                <h1 className=''>Showing All Products</h1>
+                <h2 className='products-header'>Showing All Products <span>({products.length} products)</span></h2>
                 <ul className='products'>
                   {filteredProducts.map(product => {
                     return (
