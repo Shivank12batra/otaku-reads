@@ -1,16 +1,21 @@
 import { ACTION_TYPE } from "../../utils";
+import axios from 'axios';
 
 export const addToWishlist = async(dataDispatch, product, token, toast) => {
     try {
-        const res = await fetch('/api/user/wishlist', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': token,
+        const {
+            data
+          } = await axios.post(
+            "/api/user/wishlist",
+            {
+              product,
+            },
+            {
+              headers: {
+                authorization: token,
               },
-              body: JSON.stringify({ product })
-        })
-        const data = await res.json()
+            }
+          );
         toast.success('Added In Wishlist!', {
             className: 'toast-success',
             progressClassName: 'toast-progress',
@@ -30,21 +35,20 @@ export const addToWishlist = async(dataDispatch, product, token, toast) => {
 }
 
 export const removeFromWishlist = async(id, dataDispatch, token, toast) => {
-    console.log(id)
     try {
-        const res = await fetch(`/api/user/wishlist/${id}`, {
-            method: 'DELETE',
-            headers: {
-              'authorization': token
-            }
-          })
-          const data = await res.json()
-          console.log(data.wishlist)
-          toast.error('Removed From Wishlist!', {
+        const {
+          data
+        } = await axios.delete(`api/user/wishlist/${id}`, {
+          headers: {
+            authorization: token,
+          },
+        });
+        console.log(data.wishlist)
+        toast.error('Removed from wishlist!', {
             className: 'toast-error',
-              progressClassName: 'toast-progress',
-          })
-          dataDispatch({
+            progressClassName: 'toast-progress',
+        })
+        dataDispatch({
             type: ACTION_TYPE.REMOVE_FROM_WISHLIST,
             payload: data.wishlist
           })

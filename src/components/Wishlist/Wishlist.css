@@ -1,0 +1,10 @@
+.wishlist-container {
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-wishlist {
+    height: 25rem;
+}
