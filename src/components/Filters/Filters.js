@@ -72,10 +72,18 @@ const Filters = () => {
         </div>
         <div>
         <h3>Sort By</h3>
+        <div className='empty-radiobox'>
+          <input type="radio"
+                id="option1"
+                name="options"
+                checked={sortBy === ''}
+                onClick={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, '', e)}/>
+        </div>
         <div>
             <input type="radio"
-             id="option1"
+             id="option3"
               name="options"
+              value={sortBy === 'LOW_TO_HIGH'}
               onClick={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, 'LOW_TO_HIGH', e)}/>
             <label for="option1">Low To High</label>
         </div>
@@ -83,17 +91,21 @@ const Filters = () => {
             <input type="radio"
              id="option2"
               name="options"
+              value={sortBy === 'HIGH_TO_LOW'}
               onClick={(e) => changeInputHandler(ACTION_TYPE.SORT_BY, 'HIGH_TO_LOW', e)}/>
             <label for="option2">High To Low</label>
         </div>
         </div>
         <div>
             <h3>Ratings</h3>
-            <span><BsStar/></span>
-            <span><BsStar/></span>
-            <span><BsStar/></span>
-            <span><BsStar/></span>
-            <span><BsStar/></span>
+            <div className='filter-ratings'>
+              {[...Array(filterByRating)].map((_, index) => (
+                    <BsStarFill className="fa fa-star filled" key={index} onClick={(e) => changeInputHandler(ACTION_TYPE.FILTER_BY_RATING, index + 1, e)}/>
+                  ))}
+                  {[...Array(5 - filterByRating)].map((_, index) => (
+                    <BsStar className="fa fa-star" key={index} onClick={(e) => changeInputHandler(ACTION_TYPE.FILTER_BY_RATING, filterByRating + index+1, e)}/>
+              ))}
+            </div>
         </div>
     </div>
   )

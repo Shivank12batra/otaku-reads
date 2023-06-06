@@ -56,7 +56,16 @@
     cursor: pointer;
   }
 
+  .empty-radiobox {
+    display: none;
+  }
+
   .filter-container input {
+    cursor: pointer;
+  }
+
+  .filter-ratings {
+    margin-left: 0.5rem;
     cursor: pointer;
   }
   
