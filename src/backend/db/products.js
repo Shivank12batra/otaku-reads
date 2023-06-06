@@ -1,4 +1,4 @@
-// import { v4 as uuid } from "uuid";
+import { v4 as uuid } from "uuid";
 
 /**
  * Product Database can be added here.
@@ -7,7 +7,7 @@
 
 export const products = [
   {
-    _id: 1,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/513cm8JktAL._SX331_BO1,204,203,200_.jpg",
     name: "One Piece",
     author: "Eiichiro Oda",
@@ -19,7 +19,7 @@ export const products = [
     rating: 5,
   },
   {
-    _id: 2,
+    _id: uuid(),
     img: "https://kbimages1-a.akamaihd.net/00b22f7a-2bbf-4deb-a49a-817220431611/353/569/90/False/attack-on-titan-4-2.jpg",
     name: "Attack On Titan",
     author: "Hajime Isayama",
@@ -31,7 +31,7 @@ export const products = [
     rating: 5,
   },
   {
-    _id: 3,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/71QYLrc-IQL.jpg",
     name: "Naruto",
     author: "Masashi Kishimoto",
@@ -43,7 +43,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 4,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/61GWN9NPJvL.jpg",
     name: "Fulltime Alchemist",
     author: "Hiromu Arakawa",
@@ -55,7 +55,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 5,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/91KS3nAZfRL.jpg",
     name: "Vineland Saga",
     author: "Makoto Yukimura",
@@ -67,7 +67,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 6,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/91D07epNE9L.jpg",
     name: "Berserk",
     author: "Kentaro Miura",
@@ -79,7 +79,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 7,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/815cktznRcL.jpg",
     name: "Akira",
     author: "Eiichiro Oda",
@@ -91,7 +91,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 8,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/8125DI58M+L.jpg",
     name: "Haiyku!!",
     author: "Haruichi Furudate",
@@ -103,7 +103,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 9,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/41ZNPThtZLL._SX346_BO1,204,203,200_.jpg",
     name: "Fruits Basket",
     author: "Natsuki Takaya",
@@ -115,7 +115,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 10,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/81K7vi5x2TL.jpg",
     name: "Kino's Journey",
     author: "Keiichi Sigsawa",
@@ -127,7 +127,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 11,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/51PwooY8JkL.jpg",
     name: "One-Punch Man",
     author: "Yusuke Murata",
@@ -139,7 +139,7 @@ export const products = [
     rating: 5,
   },
   {
-    _id: 12,
+    _id: uuid(),
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617389215i/55575967.jpg",
     name: "Chainsaw Man",
     author: "Tatsuki Fujimoto",
@@ -151,7 +151,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 13,
+    _id: uuid(),
     img: "https://i.pinimg.com/564x/5a/d7/65/5ad76564f4ab7b213bd335e59e1ca925.jpg",
     name: "Slam Drunk",
     author: "Takehiko Inoue",
@@ -163,7 +163,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 14,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/51PhW2p60OL.jpg",
     name: "My Hero Academia",
     author: "Kohei Horikoshi",
@@ -175,7 +175,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 15,
+    _id: uuid(),
     img: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649508834l/60619439.jpg",
     name: "The Tatami Galaxy",
     author: "Tomihiko Morimi",
@@ -187,7 +187,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 16,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg",
     name: "Perfect Blue",
     author: "Yoshikazu Takeuchi",
@@ -199,7 +199,7 @@ export const products = [
     rating: 5,
   },
   {
-    _id: 17,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/71w4lwcojEL.jpg",
     name: "Devilman Cry",
     author: "Yoshikazu Takeuchi",
@@ -211,7 +211,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 18,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/51U32pESRlL._SX342_SY445_QL70_ML2_.jpg",
     name: "Tokyo Revengers",
     author: " Ken Wakui",
@@ -223,7 +223,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 19,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/81tZrYS1DvS.jpg",
     name: "Oresama Teacher",
     author: "Izumi Tsubaki",
@@ -235,7 +235,7 @@ export const products = [
     rating: 1,
   },
   {
-    _id: 20,
+    _id: uuid(),
     img: "https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-86556-BlackClover_GN24_C1_Web-3-O7sU0ZfiLDytGRHme_CePA.jpg",
     name: "Black Clover",
     author: "Yuki Tabata",
@@ -247,7 +247,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 21,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/517TuvmxkxL._SX331_BO1,204,203,200_.jpg",
     name: "Bleach",
     author: "Tite Kubo",
@@ -259,7 +259,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 22,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/91SLpHwjp8L.jpg",
     name: "Dr. Stone",
     author: "Riichiro Inagaki",
@@ -271,7 +271,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 23,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/51YrhkB2wkL.jpg",
     name: "Hunter x Hunter",
     author: "Yoshihiro Togashi",
@@ -283,7 +283,7 @@ export const products = [
     rating: 5,
   },
   {
-    _id: 24,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/514a9YSY1+L._SX329_BO1,204,203,200_.jpg",
     name: "Mushishi",
     author: "Yuki Urushibara",
@@ -295,7 +295,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 25,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/41vP2ZtqYfL._SX351_BO1,204,203,200_.jpg",
     name: "Gantz",
     author: "Hiroya Oku",
@@ -307,7 +307,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 26,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/61FgaySLtBL.jpg",
     name: "Blue Exorcist",
     author: "Kazue Kato",
@@ -319,7 +319,7 @@ export const products = [
     rating: 2,
   },
   {
-    _id: 27,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/518-TGR6tgL._SX331_BO1,204,203,200_.jpg",
     name: "Black Lagoon",
     author: "Rei Hiroe",
@@ -331,7 +331,7 @@ export const products = [
     rating: 3,
   },
   {
-    _id: 28,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/71t6FHJhxHL.jpg",
     name: "Blue Lock",
     author: "Yusuke Nomura",
@@ -343,7 +343,7 @@ export const products = [
     rating: 4,
   },
   {
-    _id: 29,
+    _id: uuid(),
     img: "https://m.media-amazon.com/images/I/81diu2yB8YL.jpg",
     name: "Bakuman",
     author: "Tsugumi Ohba",
