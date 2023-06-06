@@ -1,22 +1,70 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import { useAuth } from '../../context/auth/AuthContext';
+import { useData } from '../../context/data/DataContext';
+import { addToCart, addToWishlist, removeFromWishlist } from '../../services';
+import { isProductInCart, isProductInWishlist } from '../../utils/cartUtils';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './ProductCard.css';
 
-const ProductCard = ({ _id, img, name, author, price, originalPrice, isBestSeller, isSoldOut, rating }) => {
-    const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
+const ProductCard = ({ product }) => {
+  const {
+     _id,
+     img,
+     name,
+     author,
+     price,
+     originalPrice,
+     isBestSeller,
+     isSoldOut,
+     rating } = product
+
+   const navigate = useNavigate()
+   const {dataDispatch, cart, wishlist} = useData()
+   const { token } = useAuth()
+   const inCart = isProductInCart(cart, _id)
+   const inWishlist = isProductInWishlist(wishlist, _id)
+   const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
+   const [disableBtn, setDisableBtn] = useState(true)
+   const addToCartHandler = (e) => {
+    e.preventDefault()
+    setDisableBtn(prev => !prev)
+    token 
+    ? isProductInCart(cart, _id)
+      ? navigate('/cart')
+      : addToCart(dataDispatch, product, token, toast)
+    : navigate('/login')
+   }
+
+  //  console.log(cart)
+  //  console.log(wishlist)
+
+   const addToWishlistHandler = (e) => {
+    e.preventDefault()
+    setDisableBtn((prev) => !prev)
+    token 
+    ? isProductInWishlist(wishlist, _id)
+      ? removeFromWishlist(_id, dataDispatch, token, toast)
+      : addToWishlist(dataDispatch, product, token, toast)
+    : navigate('/login')
+   }
+
     return (
         !isSoldOut ? (
           <li key={_id} className='product-card'>
+            <ToastContainer/>
             <Link to={`/products/${_id}`} className='product-link'>
             {isBestSeller && (
               <div className="best-seller">
                 <span className="best-seller-text">Best Seller</span>
               </div>
             )}
-            <div className="heart-icon">
-              <FaHeart />
+            <div className={`${isProductInWishlist(wishlist, _id) ? 'selected' : ''} heart-icon`}>
+              <FaHeart onClick={addToWishlistHandler}/>
             </div>
             <div className="product-image">
               <img src={img} alt={name} />
@@ -38,7 +86,7 @@ const ProductCard = ({ _id, img, name, author, price, originalPrice, isBestSelle
                 ))}
               </div>
               <div>
-                  <button className="cart-button">Add to Cart</button>
+                  <button className="cart-button" onClick={addToCartHandler}>{isProductInCart(cart, _id) ? 'Go To Cart' : 'Add To Cart'}</button>
               </div>
             </div>
             </Link>
@@ -72,7 +120,7 @@ const ProductCard = ({ _id, img, name, author, price, originalPrice, isBestSelle
               ))}
             </div>
             <div>
-                <button className="cart-button">Add to Cart</button>
+                <button className="cart-button">{isProductInCart(cart, _id) ? 'Go To Cart' : 'Add To Cart'}</button>
             </div>
               <span className="sold-out">Out of Stock</span>
           </div>

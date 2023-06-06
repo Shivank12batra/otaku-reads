@@ -1,8 +1,8 @@
 import { ACTION_TYPE } from "../../utils";
 
-export const addToWishlist = (dataDispatch, product, token, toast) => {
+export const addToWishlist = async(dataDispatch, product, token, toast) => {
     try {
-        const data = fetch('/api/user/wishlist', {
+        const res = await fetch('/api/user/wishlist', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -10,7 +10,11 @@ export const addToWishlist = (dataDispatch, product, token, toast) => {
               },
               body: JSON.stringify({ product })
         })
-        toast.success('Added In Wishlist!')
+        const data = await res.json()
+        toast.success('Added In Wishlist!', {
+            className: 'toast-success',
+            progressClassName: 'toast-progress',
+        })
 
         dataDispatch({
             type: ACTION_TYPE.ADD_TO_WISHLIST,
@@ -18,25 +22,37 @@ export const addToWishlist = (dataDispatch, product, token, toast) => {
         })
     } catch (error) {
         console.log(error)
-        toast.error('Something went wrong!')
+        toast.error('Something went wrong!', {
+            className: 'toast-error',
+            progressClassName: 'toast-progress',
+        })
     }
 }
 
-export const removeFromWishlist = (id, dataDispatch, token, toast) => {
+export const removeFromWishlist = async(id, dataDispatch, token, toast) => {
+    console.log(id)
     try {
-        const data = fetch(`/api/user/wishlist/${id}`, {
+        const res = await fetch(`/api/user/wishlist/${id}`, {
             method: 'DELETE',
             headers: {
               'authorization': token
             }
           })
-          toast.error('Removed From Wishlist!')
+          const data = await res.json()
+          console.log(data.wishlist)
+          toast.error('Removed From Wishlist!', {
+            className: 'toast-error',
+              progressClassName: 'toast-progress',
+          })
           dataDispatch({
             type: ACTION_TYPE.REMOVE_FROM_WISHLIST,
             payload: data.wishlist
           })
     } catch (error) {
         console.log(error)
-        toast.error('Something went wrong!')
+        toast.error('Something went wrong!', {
+            className: 'toast-error',
+            progressClassName: 'toast-progress',
+        })
     }
 }

@@ -1,8 +1,8 @@
 import { ACTION_TYPE } from "../../utils";
 
-export const addToCart = (dataDispatch, product, token, toast) => {
+export const addToCart = async(dataDispatch, product, token, toast) => {
     try {
-        const data = fetch('/api/user/cart', {
+        const res = await fetch('/api/user/cart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -10,7 +10,11 @@ export const addToCart = (dataDispatch, product, token, toast) => {
               },
               body: JSON.stringify({ product })
         })
-        toast.success('Added In Cart!')
+        const data = await res.json()
+        toast.success('Added In Cart!', {
+            className: 'toast-success',
+            progressClassName: 'toast-progress',
+        })
 
         dataDispatch({
             type: ACTION_TYPE.ADD_TO_CART,
@@ -18,18 +22,22 @@ export const addToCart = (dataDispatch, product, token, toast) => {
         })
     } catch (error) {
         console.log(error)
-        toast.error('Something went wrong!')
+        toast.error('Something went wrong!', {
+            className: 'toast-error',
+            progressClassName: 'toast-progress',
+        })
     }
 }
 
-export const removeFromCart = (id, dataDispatch, token, toast) => {
+export const removeFromCart = async(id, dataDispatch, token, toast) => {
     try {
-        const data = fetch(`/api/user/cart/${id}`, {
+        const res = await fetch(`/api/user/cart/${id}`, {
             method: 'DELETE',
             headers: {
               'authorization': token
             }
           })
+          const data = await res.json()
           toast.error('Removed From Cart!')
           dataDispatch({
             type: ACTION_TYPE.REMOVE_FROM_CART,
@@ -37,14 +45,17 @@ export const removeFromCart = (id, dataDispatch, token, toast) => {
           })
     } catch (error) {
         console.log(error)
-        toast.error('Something went wrong!')
+        toast.error('Something went wrong!', {
+            className: 'toast-error',
+            progressClassName: 'toast-progress',
+        })
     }
 }
 
-export const clearCart = (dataDispatch, cart, token) => {
+export const clearCart = async (dataDispatch, cart, token) => {
     try {
         for (const item of cart) {
-            const data = fetch(`/api/user/cart/${item._id}`, {
+            await fetch(`/api/user/cart/${item._id}`, {
                 method: 'DELETE',
                 headers: {
                   'authorization': token
@@ -59,9 +70,9 @@ export const clearCart = (dataDispatch, cart, token) => {
     }
 }
 
-export const increaseQtyFromCart = (id, dataDispatch, token, actionType) => {
+export const increaseQtyFromCart = async(id, dataDispatch, token, actionType) => {
     try {
-        const data = fetch(`/api/user/cart/${id}`, {
+        const res = await fetch(`/api/user/cart/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,6 +84,7 @@ export const increaseQtyFromCart = (id, dataDispatch, token, actionType) => {
                 }
             })
           })
+          const data = await res.json()
 
           dataDispatch({
             type: ACTION_TYPE.UPDATE_QTY_IN_CART,

@@ -43,7 +43,7 @@ const ProductList = () => {
                 <ul className='products'>
                   {filteredProducts.map(product => {
                     return (
-                      <ProductCard key={product._id} {...product}/>
+                      <ProductCard key={product._id} product={product}/>
                     )
                   })}
                 </ul>
