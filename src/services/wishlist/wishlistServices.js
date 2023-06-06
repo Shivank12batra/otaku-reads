@@ -38,7 +38,7 @@ export const removeFromWishlist = async(id, dataDispatch, token, toast) => {
     try {
         const {
           data
-        } = await axios.delete(`api/user/wishlist/${id}`, {
+        } = await axios.delete('/api/user/wishlist/' + id, {
           headers: {
             authorization: token,
           },
