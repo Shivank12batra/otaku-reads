@@ -1,6 +1,7 @@
 import { ACTION_TYPE } from "../../utils";
 
-export const addToCart = async(dataDispatch, product, token, toast) => {
+export const addToCart = async(dataDispatch, product, token, toast, setDisableBtn) => {
+    setDisableBtn(() => true)
     try {
         const res = await fetch('/api/user/cart', {
             method: 'POST',
@@ -26,6 +27,8 @@ export const addToCart = async(dataDispatch, product, token, toast) => {
             className: 'toast-error',
             progressClassName: 'toast-progress',
         })
+    } finally {
+        setDisableBtn(() => false)
     }
 }
 

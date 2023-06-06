@@ -159,6 +159,11 @@
   .fa-star.filled {
     color: #ffc107;
   }
+
+  .disable-btn {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
   
   .cart-button {
     display: block;

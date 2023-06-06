@@ -26,32 +26,30 @@ const ProductCard = ({ product }) => {
    const navigate = useNavigate()
    const {dataDispatch, cart, wishlist} = useData()
    const { token } = useAuth()
+   const [disableBtn, setDisableBtn] = useState(false)
+
    const inCart = isProductInCart(cart, _id)
    const inWishlist = isProductInWishlist(wishlist, _id)
    const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
-   const [disableBtn, setDisableBtn] = useState(true)
+
    const addToCartHandler = (e) => {
     e.preventDefault()
-    setDisableBtn(prev => !prev)
     token 
     ? isProductInCart(cart, _id)
       ? navigate('/cart')
-      : addToCart(dataDispatch, product, token, toast)
+      : addToCart(dataDispatch, product, token, toast, setDisableBtn)
     : navigate('/login')
    }
 
-  //  console.log(cart)
-  //  console.log(wishlist)
-
    const addToWishlistHandler = (e) => {
     e.preventDefault()
-    setDisableBtn((prev) => !prev)
     token 
     ? isProductInWishlist(wishlist, _id)
       ? removeFromWishlist(_id, dataDispatch, token, toast)
       : addToWishlist(dataDispatch, product, token, toast)
     : navigate('/login')
    }
+   console.log(disableBtn)
 
     return (
         !isSoldOut ? (
@@ -86,7 +84,7 @@ const ProductCard = ({ product }) => {
                 ))}
               </div>
               <div>
-                  <button className="cart-button" onClick={addToCartHandler}>{isProductInCart(cart, _id) ? 'Go To Cart' : 'Add To Cart'}</button>
+                  <button className={`${disableBtn ? 'disable-btn' : ''} cart-button`} onClick={addToCartHandler}>{isProductInCart(cart, _id) ? 'Go To Cart' : 'Add To Cart'}</button>
               </div>
             </div>
             </Link>
