@@ -52,7 +52,7 @@ const LoginForm = () => {
               className: 'toast-success',
               progressClassName: 'toast-progress',
             })
-          setTimeout(() => navigate(location?.state?.from?.pathname), 3000)
+          setTimeout(() => navigate(location.state.from.pathname), 3000)
         }
     } catch (e) {
       console.log(e)

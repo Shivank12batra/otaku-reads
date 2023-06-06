@@ -1,5 +1,4 @@
 import {createContext, useContext, useState, useEffect, useReducer} from 'react';
-import { ACTION_TYPE } from '../../utils/constant';
 import { initialState, dataReducer } from '../../reducer/DataReducer';
 
 const DataContext = createContext(null);
@@ -12,7 +11,7 @@ export const DataProvider = ({children}) => {
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
 
-    console.log(state.category)
+    console.log(state)
 
     const fetchCategoriesData = async() => {
         try {
@@ -58,6 +57,8 @@ export const DataProvider = ({children}) => {
             category: state.category,
             priceRange: state.priceRange,
             filterByRating: state.filterByRating,
+            cart: state.cart,
+            wishlist: state.wishlist,
             dataDispatch: dispatch,
             categories,
             products

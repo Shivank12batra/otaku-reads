@@ -1,3 +1,21 @@
+.toast-success {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.toast-success .Toastify__progress-bar {
+  background-color: #ffffff;
+}
+
+.toast-error {
+  background-color: red;
+  color: #ffffff;
+}
+
+.toast-progress {
+  background-color: #ffffff;
+}
+
 .not-found {
     margin-top: 10rem;
     text-align: center;
@@ -145,6 +163,11 @@
     border-radius: 0.4rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+  }
+
+  .disable-btn {
+    pointer-events: none;
+    cursor: not-allowed;
   }
 
   .custom-cart-btn {

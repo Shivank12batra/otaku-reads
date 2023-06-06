@@ -1,3 +1,21 @@
+.toast-success {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.toast-success .Toastify__progress-bar {
+  background-color: #ffffff;
+}
+
+.toast-error {
+  background-color: red;
+  color: #ffffff;
+}
+
+.toast-progress {
+  background-color: #ffffff;
+}
+
 .product-card {
     position: relative;
     width: 15rem;
@@ -65,6 +83,10 @@
     top: 0.8rem;
     right: 0.8rem;
     color: grey;
+  }
+
+  .selected {
+    color: red;
   }
 
   .heart-icon:hover {
@@ -136,6 +158,11 @@
   
   .fa-star.filled {
     color: #ffc107;
+  }
+
+  .disable-btn {
+    pointer-events: none;
+    cursor: not-allowed;
   }
   
   .cart-button {
