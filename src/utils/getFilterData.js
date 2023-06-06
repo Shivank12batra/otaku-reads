@@ -24,3 +24,10 @@ export const filterData = (products, sortBy, priceRange, category, filterByRatin
     }
     return products
 }
+
+export const searchData = (products, searchTerm) => {
+    if (searchTerm) {
+        products = products.filter(({name}) => name.toLowerCase().startsWith(searchTerm))
+    }
+    return products
+}

@@ -18,7 +18,7 @@ const ProductDetail = () => {
   const {dataDispatch, cart, wishlist, products } = useData()
   const [disableBtn, setDisableBtn] = useState(false)
 
-  const product = products.find((product) => product._id === parseInt(id))
+  const product = products.find((product) => product._id === id)
 
   const addToCartHandler = () => {
     token 

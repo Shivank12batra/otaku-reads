@@ -9,6 +9,7 @@ export const initialState = {
         'Shoujo' : true
     },
     filterByRating: 0,
+    searchTerm: "",
     cart: [],
     wishlist: [],
     address: [],
@@ -47,6 +48,12 @@ export const dataReducer = (state, action) => {
                 priceRange: "500",
                 category: state.category,
                 filterByRating: 0,
+                searchTerm: "",
+            }
+        case ACTION_TYPE.SEARCH:
+            return {
+                ...state,
+                searchTerm: action.payload
             }
         case ACTION_TYPE.ADD_TO_CART:
             return {

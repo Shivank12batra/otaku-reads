@@ -57,6 +57,7 @@ export const DataProvider = ({children}) => {
             category: state.category,
             priceRange: state.priceRange,
             filterByRating: state.filterByRating,
+            searchTerm: state.searchTerm,
             cart: state.cart,
             wishlist: state.wishlist,
             dataDispatch: dispatch,

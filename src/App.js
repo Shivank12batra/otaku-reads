@@ -5,7 +5,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ProductList from "./components/ProductList/ProductList";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import UserProfile from "./components/UserProfile";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 import Wishlist from "./components/Wishlist/Wishlist";
 import Checkout from "./components/Checkout";
 import NavBar from "./components/NavBar/NavBar";

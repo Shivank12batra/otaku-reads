@@ -1,6 +1,7 @@
 import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useData } from '../../context/data/DataContext';
+import { ACTION_TYPE, searchData } from '../../utils';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaBook } from 'react-icons/fa';
 import { RiUserLine } from 'react-icons/ri';
@@ -10,9 +11,27 @@ import './NavBar.css';
 
 
 const NavBar = () => {
-  const {setShowFilters} = useData();
+  const {dataDispatch, searchTerm, setShowFilters} = useData();
   const location = useLocation();
+  const navigate = useNavigate();
   const isProductList = location.pathname === '/products'
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    navigate('/products')
+    dataDispatch({
+      type: ACTION_TYPE.SEARCH,
+      payload: searchTerm
+    })
+  }
+
+  const inputSearch = (e) => {
+    navigate('/products')
+    dataDispatch({
+      type: ACTION_TYPE.SEARCH,
+      payload: e.target.value?.toLowerCase()
+    })
+  }
 
   return (
     <div className='nav-container'>
@@ -23,8 +42,12 @@ const NavBar = () => {
           <h1 className='nav-header'>Otaku Reads</h1>
         </Link>
         <div className='nav-search'>
-          <form className='search-form'>
-            <input type='text' name='searchProduct' placeholder='Search For Manga' />
+          <form className='search-form' onSubmit={(e) => handleSubmit(e)}>
+            <input type='text'
+             name='searchProduct'
+             value={searchTerm}
+             placeholder='Search For Manga'
+             onChange={(e) => inputSearch(e)} />
           </form>
         </div>
         <div>
