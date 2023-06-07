@@ -15,7 +15,6 @@ const Cart = () => {
   const {token} = useAuth()
   const {dataDispatch, cart, wishlist } = useData()
   const priceObj = getPriceDetails(cart)
-  console.log(priceObj)
   const {price: totalPrice , discount: totalDiscount} = priceObj
 
   const addToWishlistHandler = (_id, product) => {
