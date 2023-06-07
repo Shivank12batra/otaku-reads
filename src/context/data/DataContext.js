@@ -60,6 +60,7 @@ export const DataProvider = ({children}) => {
             searchTerm: state.searchTerm,
             cart: state.cart,
             wishlist: state.wishlist,
+            address: state.address,
             dataDispatch: dispatch,
             categories,
             products

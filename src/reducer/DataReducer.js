@@ -85,6 +85,21 @@ export const dataReducer = (state, action) => {
                 ...state,
                 wishlist: [...action.payload]
             }
+        case ACTION_TYPE.ADD_ADDRESS:
+            return {
+                ...state,
+                address: [...state.address, action.payload],
+            };
+        case ACTION_TYPE.REMOVE_ADDRESS:
+            return {
+                ...state,
+                address: state.address.filter(({id}) => action.payload.id !== id)
+            }
+        case ACTION_TYPE.UPDATE_ADDRESS:
+            return {
+                ...state,
+                address: state.address.map(location => location.id === action.payload.id ? action.payload : location)
+            }
         case ACTION_TYPE.LOG_OUT:
             return {
                 ...state,

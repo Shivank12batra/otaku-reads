@@ -105,3 +105,118 @@
     background-color: rgb(139, 0, 0);
   }
 
+  .address-detail {
+    min-height: 10rem;
+    margin-left: 2rem;
+  }
+
+  .address-header {
+    margin-bottom: 0;
+  }
+
+  .new-address-btn {
+    width: 60%;
+    margin-left: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.7rem 1rem;
+    color: white;
+    cursor: pointer;
+    background-color: red;
+  }
+
+  .new-address-btn:hover {
+    background-color: rgb(139, 0, 0);
+  }
+
+  .addresses-container {
+    list-style: none;
+  }
+
+  .address-container h2 {
+    margin-bottom: 0.4rem;
+  }
+
+  .address-container p {
+    margin: 0.2rem;
+  }
+
+  .edit-address-btn {
+    margin-top: 1rem;
+    width: 20%;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    margin-right: 0.5rem;
+    color: black;
+    background-color: aliceblue;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  .remove-address-btn {
+    margin-top: 1rem;
+    width: 20%;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    margin-right: 0.5rem;
+    color: red;
+    background-color: aliceblue;
+    border: 1px solid red;
+    cursor: pointer;
+  }
+
+  .edit-address-btn:hover {
+    background-color: grey;
+  }
+
+  .remove-address-btn:hover {
+    color: white;
+    background-color: rgb(201, 13, 13);
+  }
+
+  .address-form {
+    text-align: center;
+  }
+
+  .address-form input {
+    display: block;
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 1.5rem auto;
+    padding: 0.2rem;
+  }
+
+  .cancel-btn {
+    margin-top: 1rem;
+    width: 20%;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+    color: black;
+    background-color: aliceblue;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  .cancel-btn:hover {
+    background-color: grey;
+  }
+
+  .save-address-btn {
+    margin-top: 1rem;
+    width: 20%;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    margin-right: 2rem;
+    color: red;
+    background-color: aliceblue;
+    border: 1px solid red;
+    cursor: pointer;
+  }
+
+  .save-address-btn:hover {
+    color: white;
+    background-color: rgb(201, 13, 13);
+  }
