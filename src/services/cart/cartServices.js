@@ -37,6 +37,7 @@ export const addToCart = async(dataDispatch, product, token, toast, setDisableBt
 }
 
 export const removeFromCart = async(id, dataDispatch, token, toast) => {
+    console.log('remove from cart')
     try {
         const {
           data
@@ -72,7 +73,7 @@ export const clearCart = async (dataDispatch, cart, token) => {
             });
           }
         dataDispatch({
-            action: ACTION_TYPE.CLEAR_CART
+            type: ACTION_TYPE.CLEAR_CART
           })
     } catch (error) {
         console.log(error)
@@ -96,6 +97,7 @@ export const increaseQtyFromCart = async(id, dataDispatch, token, actionType) =>
               },
             }
           );
+          console.log(data)
       
           dataDispatch({
             type: ACTION_TYPE.UPDATE_QTY_IN_CART,

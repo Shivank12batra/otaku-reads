@@ -8,7 +8,7 @@ import { BsStar, BsStarFill } from 'react-icons/bs';
 import { FaTrash } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Wishlist.css'
+import './Wishlist.css';
 
 const Wishlist = () => {
   const navigate = useNavigate()
@@ -36,8 +36,7 @@ const Wishlist = () => {
       {wishlist.length > 0 ? (
         <ul className='card-container'>
           {wishlist.map((product) => {
-            const {_id, id, img, name, author, price, originalPrice, isBestSeller, category, rating} = product
-            console.log(_id)
+            const {_id, img, name, author, price, originalPrice, isBestSeller, category, rating} = product
             const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
             return (
               <li key={_id} className='custom-card-container'>
@@ -90,7 +89,7 @@ const Wishlist = () => {
                   </div>
                 </div>
                 <div className='btn-wrapper'>
-                  <button className="wishlist-cart-btn" onClick={() => addToCartHandler(_id, product)}>
+                  <button className={`${disableBtn} wishlist-cart-btn`} onClick={() => addToCartHandler(_id, product)}>
                     {isProductInCart(cart, _id) ? 'Already In Cart': 'Go To Cart'}
                 </button>
                 </div>

@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import {useParams, useNavigate} from 'react-router-dom';
 import { useAuth } from '../../context/auth/AuthContext';
 import { useData } from '../../context/data/DataContext';
 import { addToCart, addToWishlist } from '../../services';
 import { isProductInCart, isProductInWishlist } from '../../utils/cartUtils';
-import { BsStar, BsStarFill } from 'react-icons/bs'
-import { FaBolt } from 'react-icons/fa'
+import { BsStar, BsStarFill } from 'react-icons/bs';
+import { FaBolt } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './ProductDetail.css'
+import './ProductDetail.css';
 
 
 const ProductDetail = () => {

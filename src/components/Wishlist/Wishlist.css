@@ -1,13 +1,13 @@
 .wishlist-container {
     margin-top: 5rem;
+    min-height: 25rem;
 }
 
 .empty-wishlist {
-    margin-top: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25rem;
+    height: 30rem;
 }
 
 .toast-success {

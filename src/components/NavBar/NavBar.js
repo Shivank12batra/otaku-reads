@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useData } from '../../context/data/DataContext';
-import { ACTION_TYPE, searchData } from '../../utils';
+import { ACTION_TYPE } from '../../utils';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaBook } from 'react-icons/fa';
 import { RiUserLine } from 'react-icons/ri';

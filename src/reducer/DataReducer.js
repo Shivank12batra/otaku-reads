@@ -65,6 +65,11 @@ export const dataReducer = (state, action) => {
                 ...state,
                 cart: [...action.payload]
             }
+        case ACTION_TYPE.UPDATE_QTY_IN_CART:
+            return {
+                ...state,
+                cart: [...action.payload]
+            }
         case ACTION_TYPE.CLEAR_CART:
             return {
                 ...state,
@@ -79,6 +84,13 @@ export const dataReducer = (state, action) => {
             return {
                 ...state,
                 wishlist: [...action.payload]
+            }
+        case ACTION_TYPE.LOG_OUT:
+            return {
+                ...state,
+                cart: [],
+                wishlist: [],
+                address: [],
             }
         default:
             return {...state}
