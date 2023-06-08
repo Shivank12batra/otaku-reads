@@ -33,13 +33,14 @@ const Wishlist = () => {
   return (
     <div className='wishlist-container'>
       <ToastContainer/>
+      <h2 className='wishlist-header'>MY WISHLIST</h2>
       {wishlist.length > 0 ? (
         <ul className='card-container'>
           {wishlist.map((product) => {
             const {_id, img, name, author, price, originalPrice, isBestSeller, category, rating} = product
             const discount = Math.ceil(((originalPrice - price)/originalPrice * 100))
             return (
-              <li key={_id} className='custom-card-container'>
+              <li key={_id} className='wishlist-card-container'>
                 <FaTrash className='delete-icon'
                 onClick={() => removeFromWishlistHandler(_id)}/>
                 <div className='img-container'>

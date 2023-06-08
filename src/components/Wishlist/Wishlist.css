@@ -1,13 +1,16 @@
 .wishlist-container {
     margin-top: 5rem;
-    min-height: 25rem;
+    min-height: 30rem;
+}
+
+.wishlist-header {
+  text-align: center;
+  margin-top: 10rem;
 }
 
 .empty-wishlist {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30rem;
+  margin-top: 2rem;
+    text-align: center;
 }
 
 .toast-success {
@@ -39,9 +42,9 @@
       background-color: #f8f8f8;
   }
   
-  .custom-card-container {
+  .wishlist-card-container {
       position: relative;
-      margin-top: 7rem;
+      margin-top: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;

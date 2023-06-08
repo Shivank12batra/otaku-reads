@@ -1,8 +1,8 @@
 import React from 'react'
-import Loader from './Loader/Loader'
-import { useData } from '../context/data/DataContext'
-import Carousel from './Carousel/Carousel'
-import Category from './Category/Category'
+import Loader from '../Loader/Loader'
+import { useData } from '../../context/data/DataContext'
+import Carousel from '../Carousel/Carousel'
+import Category from '../Category/Category'
 
 const Home = () => {
   const {loading} = useData()

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom';
 import { useAuth } from '../../context/auth/AuthContext';
 import { useData } from '../../context/data/DataContext';
@@ -139,13 +139,14 @@ const Cart = () => {
               <div className='thick-line'></div>
               <div className="order-line">
                 <span className="order-label">Total Amount</span>
-                <span className="order-value">{totalPrice - totalDiscount}</span>
+                <span className="order-value total-amt">{totalPrice - totalDiscount}</span>
               </div>
               <div className='thick-line'></div>
             </div>
             <div className="divider"></div>
-            <div className='checkout-message'>You received a total discount of {totalDiscount}</div>
-            <button className="checkout-button" onClick={() => navigate('/checkout')}>Checkout</button>
+            <button className="checkout-button" onClick={() => navigate('/checkout')}>
+              Place Order
+            </button>
           </div>
         </div>
       </div>:
