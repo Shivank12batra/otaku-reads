@@ -83,7 +83,7 @@ const Checkout = () => {
             <div className="divider"></div>
             <div className='address-message'>
               <h3>Deliver To:</h3>
-              {orderAddress.length > 0 ?
+              {orderAddress ?
                <div className='address-text'>
                 <span>{orderAddress.name.toUpperCase()}, </span>
                 <span>{orderAddress.block}, </span>
