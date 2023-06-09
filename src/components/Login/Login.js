@@ -26,7 +26,6 @@ const LoginForm = () => {
   const location = useLocation()
 
   const updateCreds = (e, fieldName) => {
-    console.log(e.target.value)
     setCreds(prev => ({...prev, [fieldName]: e.target.value}))
   }
 
@@ -34,7 +33,6 @@ const LoginForm = () => {
   const loginCheck = async(creds) => {
     try {
       const data = await loginService(creds)
-      console.log(data)
       const {foundUser, encodedToken} = data
       if (!encodedToken) {
           toast.error('Failed to log in', {

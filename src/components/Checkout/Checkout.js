@@ -4,21 +4,22 @@ import { useData } from '../../context/data/DataContext';
 import { getPriceDetails } from '../../utils';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Checkout.css'
+import './Checkout.css';
 
 const Checkout = () => {
   const navigate = useNavigate()
   const {cart, address} = useData()
   const priceObj = getPriceDetails(cart)
-  const [orderAddress, setOrderAddress] = useState(address.length > 0 ? address[0] : [])
+  const [orderAddress, setOrderAddress] = useState(address.length > 0 ? address[0] : null)
   const {price: totalPrice , discount: totalDiscount} = priceObj
 
   const checkoutHandler = () => {
-    if (orderAddress.length === 0) {
+    if (!orderAddress) {
       toast.error('Please select an address!', {
         className: 'toast-error',
         progressClassName: 'toast-progress',
     })
+    setTimeout(() => navigate('/profile'), 3000)
     }
   }
 

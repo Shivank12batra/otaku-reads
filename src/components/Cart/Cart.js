@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { useAuth } from '../../context/auth/AuthContext';
 import { useData } from '../../context/data/DataContext';
