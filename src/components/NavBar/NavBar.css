@@ -62,6 +62,26 @@ input::placeholder {
     padding: 0 0.5rem;
 }
 
+.cart-icon {
+    position: relative;
+}
+
+.wishlist-icon {
+    position: relative;
+}
+
+.item-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 3rem;
+    padding: 0.1rem 0.3rem;
+    margin-left: 2rem;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 868px) {
     .hamburger-icon {

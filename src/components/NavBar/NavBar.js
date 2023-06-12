@@ -11,7 +11,7 @@ import './NavBar.css';
 
 
 const NavBar = () => {
-  const {dataDispatch, setLoading, setShowFilters} = useData();
+  const {dataDispatch, cart, wishlist, setLoading, setShowFilters} = useData();
   const location = useLocation();
   const navigate = useNavigate();
   const timer = useRef(null)
@@ -70,13 +70,15 @@ const NavBar = () => {
               </li>
             </Link>
             <Link to='/wishlist' className='link'>
-              <li>
+              <li className='wishlist-icon'>
               <IoHeartOutline size={25}/>
+              {wishlist.length > 0 && <span className='item-count'>{wishlist.length}</span>}
               </li>
             </Link>
             <Link to='/cart' className='link'>
-              <li>
+              <li className='cart-icon'>
               <AiOutlineShoppingCart size={25}/>
+              {cart.length > 0 && <span className='item-count'>{cart.length}</span>}
               </li>
             </Link>
           </ul>
