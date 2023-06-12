@@ -33,7 +33,6 @@
 
 .products-header {
     margin-left: 2rem;
-    /* font-size: 1.1rem; */
 }
 
 .products {
@@ -42,6 +41,25 @@
     grid-gap: 1rem;
     list-style: none;
 }
+
+.disable_page_button {
+    visibility: hidden;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .pagination > span {
+    cursor: pointer;
+    padding: 20px;
+  }
+  
+  .selected_page {
+    background-color: aqua;
+  }
 
 @media (max-width: 868px) {
     .filters {
