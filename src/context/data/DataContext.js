@@ -52,6 +52,7 @@ export const DataProvider = ({children}) => {
             showFilters,
             setShowFilters,
             loading,
+            setLoading,
             error,
             sortBy: state.sortBy,
             category: state.category,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useData } from '../../context/data/DataContext';
 import { ACTION_TYPE } from '../../utils';
@@ -11,9 +11,11 @@ import './NavBar.css';
 
 
 const NavBar = () => {
-  const {dataDispatch, searchTerm, setShowFilters} = useData();
+  const {dataDispatch, setLoading, setShowFilters} = useData();
   const location = useLocation();
   const navigate = useNavigate();
+  const timer = useRef(null)
+  const [input, setInput] = useState('')
   const isProductList = location.pathname === '/products'
 
   const handleSubmit = (e) => {
@@ -21,17 +23,22 @@ const NavBar = () => {
     navigate('/products')
     dataDispatch({
       type: ACTION_TYPE.SEARCH,
-      payload: searchTerm
+      payload: input
     })
   }
 
-  const inputSearch = (e) => {
-    navigate('/products')
-    dataDispatch({
-      type: ACTION_TYPE.SEARCH,
-      payload: e.target.value?.toLowerCase()
-    })
-  }
+  useEffect(() => {
+    clearTimeout(timer.current)
+    timer.current = setTimeout(() => {
+      dataDispatch({
+        type: ACTION_TYPE.SEARCH,
+        payload: input
+      })
+      setLoading(true)
+      setTimeout(() => setLoading(false), 500)
+      navigate('/products')
+    }, 500)
+  }, [input])
 
   return (
     <div className='nav-container'>
@@ -45,9 +52,9 @@ const NavBar = () => {
           <form className='search-form' onSubmit={(e) => handleSubmit(e)}>
             <input type='text'
              name='searchProduct'
-             value={searchTerm}
+             value={input}
              placeholder='Search For Manga'
-             onChange={(e) => inputSearch(e)} />
+             onChange={(e) => setInput(e.target.value)} />
           </form>
         </div>
         <div>
