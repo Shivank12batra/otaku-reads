@@ -1,6 +1,6 @@
 .cart-container {
     margin-top: 5rem;
-    min-height: 35rem;
+    min-height: 100vh;
 }
 
 .empty-cart {
