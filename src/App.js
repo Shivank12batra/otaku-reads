@@ -1,19 +1,20 @@
 import "./App.css";
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "./components/Home/Home";
+import {
+  Home,
+  ProductList,
+  ProductDetail,
+  UserProfile,
+  Cart,
+  Wishlist,
+  Checkout,
+  NoPage,
+  Signup,
+  Login
+} from "./pages";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import ProductList from "./components/ProductList/ProductList";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
-import UserProfile from "./components/UserProfile/UserProfile";
-import Cart from "./components/Cart/Cart";
-import Wishlist from "./components/Wishlist/Wishlist";
-import Checkout from "./components/Checkout/Checkout";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Signup from "./components/Signup/Signup";
-import Login from "./components/Login/Login";
-import MockmanAPI from "./components/Mockman/MockmanAPI";
-import NoPage from "./components/NoPage/NoPage";
 
 
 function App() {
@@ -26,7 +27,6 @@ function App() {
         <Route path='/products/:id' element={<ProductDetail/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/mockman' element={<MockmanAPI/>}/>
         <Route path='*' element={<NoPage/>}/>
         <Route exact element={<PrivateRoute/>}>
           <Route path='/profile' element={<UserProfile/>}/>
