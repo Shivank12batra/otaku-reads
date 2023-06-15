@@ -29,6 +29,7 @@ const Checkout = () => {
       <h2 className='checkout-header'>CHECKOUT</h2>
       <div className='address-checkout-division'>
         <ul className='addresses-container'>
+          <h2>Select Address</h2>
           {address.map(location => {
             const {id, name, block, region, state, phoneNumber} = location
             return (

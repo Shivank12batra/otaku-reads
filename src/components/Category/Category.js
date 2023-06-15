@@ -7,7 +7,6 @@ import './Category.css'
 
 const Category = () => {
   const {error, categories, category, dataDispatch} = useData()
-  console.log(error)
 
   const setCategory = (catName) => {
     for (const cat in category) {

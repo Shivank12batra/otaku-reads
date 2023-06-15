@@ -1,6 +1,6 @@
 .wishlist-container {
     margin-top: 5rem;
-    min-height: 30rem;
+    min-height: 100vh;
 }
 
 .wishlist-header {
@@ -9,8 +9,9 @@
 }
 
 .empty-wishlist {
+  min-height: 100vh;
   margin-top: 2rem;
-    text-align: center;
+  text-align: center;
 }
 
 .toast-success {

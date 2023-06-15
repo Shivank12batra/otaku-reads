@@ -65,9 +65,13 @@
     .filters {
         display: none
     }
+    .products-container {
+        width: 100%;
+        min-height: 100vh;
+    }
 }
 
-@media (max-width: 628px) {
+@media (max-width: 728px) {
     .products {
         grid-template-columns: repeat(2, 1fr);
     }

@@ -91,7 +91,7 @@ const Wishlist = () => {
                 </div>
                 <div className='btn-wrapper'>
                   <button className={`${disableBtn} wishlist-cart-btn`} onClick={() => addToCartHandler(_id, product)}>
-                    {isProductInCart(cart, _id) ? 'Already In Cart': 'Go To Cart'}
+                    {isProductInCart(cart, _id) ? 'Go In Cart': 'Add To Cart'}
                 </button>
                 </div>
                </div>

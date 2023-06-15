@@ -1,5 +1,5 @@
 .no-page-container {
     text-align: center;
-    height: 70vh;
+    min-height: 100vh;
     margin-top: 10rem;
 }
