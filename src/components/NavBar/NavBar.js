@@ -37,7 +37,7 @@ const NavBar = () => {
       setLoading(true)
       setTimeout(() => setLoading(false), 500)
       if (input.trim().length > 0) {
-        navigate("/product");
+        navigate("/products");
       }
     }, 500)
   }, [input])
