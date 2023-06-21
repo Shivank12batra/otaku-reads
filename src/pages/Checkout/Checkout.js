@@ -1,17 +1,81 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import { useAuth } from '../../context/auth/AuthContext';
 import { useData } from '../../context/data/DataContext';
 import { getPriceDetails } from '../../utils';
+import { clearCart } from '../../services';
 import { toast, ToastContainer } from 'react-toastify';
+import naruto from '../../assets/naruto.jpg';
 import 'react-toastify/dist/ReactToastify.css';
 import './Checkout.css';
 
 export const Checkout = () => {
   const navigate = useNavigate()
-  const {cart, address} = useData()
+  const {token} = useAuth()
+  const {dataDispatch, cart, address} = useData()
   const priceObj = getPriceDetails(cart)
   const [orderAddress, setOrderAddress] = useState(address.length > 0 ? address[0] : null)
   const {price: totalPrice , discount: totalDiscount} = priceObj
+
+  const loadScript = async(url) => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script')
+      script.src = url
+
+      script.onload = () => {
+        resolve(true)
+      }
+
+      script.onerror = () => {
+        resolve(false)
+      }
+      document.body.appendChild(script)
+    })
+  }
+
+  const displayRazorpay = async() => {
+    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+    if (!res) {
+      toast.error('Razorpay SDK failed to load, check your connection', {
+        className: 'toast-error',
+        progressClassName: 'toast-progress',
+      })
+      return 
+    }
+    const options = {
+      key: "rzp_test_4Os4vYkumFpDhp",
+      key_secret: "PjnvnFzlrvjetX0FjWkstpKH",
+      amount: Number(totalPrice - totalDiscount) * 100,
+      currency: "INR",
+      name: "Otaku Reads",
+      description: "Thank you for shopping with us",
+      image: {naruto},
+      handler: function (response) {
+        toast.success('Payment Made Successfully!', {
+          className: 'toast-success',
+          progressClassName: 'toast-progress',
+        })
+        clearCart(dataDispatch, cart, token);
+        setTimeout(() => navigate('/profile'), 3000)
+      },
+      prefill: {
+        name: 'Shivank Batra',
+        email: 'Shivank56batra@gmail.com',
+        contact: '9968280784'
+      },
+      notes: {
+        address: "Razorpay Corporate Office"
+      },
+      theme: {
+        color: "#007bb5",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  }
+
+
 
   const checkoutHandler = () => {
     if (!orderAddress) {
@@ -20,6 +84,8 @@ export const Checkout = () => {
         progressClassName: 'toast-progress',
     })
     setTimeout(() => navigate('/profile'), 3000)
+    } else {
+      displayRazorpay()
     }
   }
 
@@ -96,8 +162,8 @@ export const Checkout = () => {
                 Please select an address!
               </div>}
             </div>
-            <button className="checkout-button" onClick={checkoutHandler}
-            >Checkout
+            <button className="checkout-button" onClick={checkoutHandler}>
+              Checkout
             </button>
           </div>
         </div>
