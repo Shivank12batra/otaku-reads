@@ -60,15 +60,16 @@
 
 .cart-wishlist-btn {
     width: 100%;
-      display: flex;
-      padding: 0.8rem 1.2rem;
-      border-radius: 0.4rem;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      color: #fff;
-      background-color: #007bff;
-      cursor: pointer;
+    display: flex;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
 }
 
 .cart-wishlist-btn:hover {

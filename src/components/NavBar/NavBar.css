@@ -4,13 +4,13 @@
     width: 100vw;
     z-index: 100;
     margin-top: 0rem;
-    background-color: black;
+    background-color: var(--primary-background-color);
     overflow: hidden;
 }
 
 .hamburger-icon {
     display: none;
-    color: white;
+    color: var(--primary-color);
     position: absolute;
     top: 3rem;
     left: 0.5rem;
@@ -19,18 +19,19 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    color: aliceblue;
+    color: var(--primary-color);
     margin-top: 2rem;
 }
 
 .link {
     text-decoration: none;
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .nav-header {
-    color: aliceblue;
-    font-size: 1.8rem;
+    font-family: 'Great Vibes', cursive;
+    color: var(--primary-color);
+    font-size: 2rem;
     margin-top: 0rem;
     margin-left: 8rem;
 }

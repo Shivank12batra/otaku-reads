@@ -25,6 +25,6 @@ export const categories = [
     img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/08/Record-of-Ragnarok-Berserk-2016-and-Tokyo-Ghoul.jpg",
     categoryName: "Seinen",
     description:
-      "Seinen anime and manga are aimed at older male audiences and are typically more mature in content, often dealing with more serious themes such as politics, sexuality, and violence.",
+      "Seinen anime and manga are aimed at older male audiences and are typically more mature in content, often dealing with much more serious themes such as politics, sexuality, crime, violence, ethics and morality.",
   }
 ];
