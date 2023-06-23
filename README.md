@@ -2,6 +2,8 @@
 
 Otaku Reads - Your all in one anime bookstore to buy fresh, new age and classical mangas.
 
+[otaku-reads](https://drive.google.com/file/d/1Uhhskp58Fp0JsP46pj5DmBKTwy2Dpicq/view)
+
 ## Table of Contents
 
 - [Installation and Local Setup](#installation-and-local-setup)
@@ -14,17 +16,16 @@ Otaku Reads - Your all in one anime bookstore to buy fresh, new age and classica
 To install and run the Plantique Store locally, follow these steps:
 
 1. Clone the repository:
-git clone [https://github.com/Shivank12batra/otaku-reads]
+git clone https://github.com/Shivank12batra/otaku-reads
 
 2. Navigate to the project directory:
-$ cd plantique-v1
+$ cd e-commerce
 
 3. Install the dependencies:
 $ npm install
 
 4. Start the local development server:
 $ npm start
-
 
 ## Features
 
