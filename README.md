@@ -2,7 +2,7 @@
 
 Otaku Reads - Your all in one anime bookstore to buy fresh, new age and classical mangas.
 
-[otaku-reads](https://drive.google.com/file/d/1Uhhskp58Fp0JsP46pj5DmBKTwy2Dpicq/view)
+![otaku-reads]("C:\Users\shivank\Videos\Captures\React App - Google Chrome 2023-06-09 22-47-55.mp4")
 
 ## Table of Contents
 
