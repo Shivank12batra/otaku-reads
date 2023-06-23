@@ -2,8 +2,7 @@
 
 Otaku Reads - Your all in one anime bookstore to buy fresh, new age and classical mangas.
 
-[![otaku-reads](C:/Users/shivank/projects/e-commerce/src/assets/naruto.jpg)](C:/Users/shivank/Videos/Captures/React%20App%20-%20Google%20Chrome%202023-06-09%2022-47-55.mp4)
-
+![otaku-reads](src/assets/naruto.jpg)
 ## Table of Contents
 
 - [Installation and Local Setup](#installation-and-local-setup)
