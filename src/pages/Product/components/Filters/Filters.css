@@ -46,7 +46,7 @@
   }
 
   .filter-container h3 {
-    background-color: black;
+    background-color: var(--primary-background-color);
     color: aliceblue;
     padding: 0.1rem 2rem;
   }

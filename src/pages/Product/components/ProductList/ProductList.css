@@ -32,6 +32,7 @@
   
 
 .products-header {
+    margin-top: 3rem;
     margin-left: 2rem;
 }
 
@@ -62,22 +63,34 @@
   }
 
 @media (max-width: 868px) {
+    .products-header {
+        margin-top: 5rem;
+    }
     .filters {
         display: none
     }
     .products-container {
         width: 100%;
+        margin: 0 auto;
         min-height: 100vh;
     }
 }
 
 @media (max-width: 728px) {
+    .products-header {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 7rem;
+    }
     .products {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 446px) {
+    .products-header {
+        font-size: 1.2rem;
+    }
     .products {
         grid-template-columns: repeat(1, 1fr);
     }

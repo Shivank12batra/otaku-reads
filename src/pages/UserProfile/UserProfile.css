@@ -27,7 +27,7 @@
   .profile-btns button {
     width: 50%;
     margin: 0 auto;
-    color: black;
+    color: var(--primary-background-color);
     background-color: aliceblue;
     border: none;
     font-size: 1.2rem;
@@ -39,11 +39,11 @@
 
   .profile-btns .selected {
     color: aliceblue;
-    background-color: black;
+    background-color: var(--primary-background-color);
   }
 
   .profile-btns button:hover {
-    background-color: black;
+    background-color: var(--primary-background-color);
     color: aliceblue;
   }
 
@@ -51,7 +51,7 @@
     width: 100%;
     height: 2px;
     margin: 0;
-    background-color: #000;
+    background-color: var(--primary-background-color);
   }
 
   .profile-details {
@@ -69,7 +69,7 @@
     height: 2px;
     padding: 0;
     margin-top: 0;
-    background-color: #000;
+    background-color: var(--primary-background-color);
   }
 
   .user-details {
@@ -162,7 +162,7 @@
     padding: 0.3rem;
     margin-right: 0.5rem;
     color: red;
-    background-color: aliceblue;
+    background-color: var(--primary-color);
     border: 1px solid red;
     cursor: pointer;
   }
@@ -195,7 +195,7 @@
     padding: 0.3rem;
     margin-right: 4rem;
     margin-bottom: 2rem;
-    color: black;
+    color: var(--primary-background-color);
     background-color: aliceblue;
     border: 1px solid black;
     cursor: pointer;

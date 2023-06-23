@@ -153,7 +153,7 @@ export const Checkout = () => {
               <h3>Deliver To:</h3>
               {orderAddress ?
                <div className='address-text'>
-                <span>{orderAddress.name.toUpperCase()}, </span>
+                <span>{orderAddress.name.toUpperCase()},</span>
                 <span>{orderAddress.block}, </span>
                 <span>{orderAddress.region}, </span>
                 <span>{orderAddress.state}</span>

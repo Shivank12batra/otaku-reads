@@ -49,7 +49,7 @@
   }
 
   .product-card.out-of-stock div .cart-button:hover {
-    background-color: #007bff;
+    background-color: var(--background-btn-hover-color);
   }
 
   .product-card.out-of-stock .heart-icon:hover {
@@ -169,7 +169,7 @@
     display: block;
     width: 70%;
     margin: 0 auto;
-    background-color: #007bff;
+    background-color: var(--background-btn-color);
     color: #fff;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -184,7 +184,7 @@
   }
   
   .cart-button:hover {
-    background-color: #0056b3;
+    background-color: var(--background-btn-hover-color);
   }
 
   .product-card.out-of-stock .card-button:hover {

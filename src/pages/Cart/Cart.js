@@ -115,9 +115,9 @@ export const Cart = () => {
               </li>
             )
           })}
-         <button className='clear-cart-btn' onClick={() => clearCart(dataDispatch, cart, token)}>
-           Clear Cart
-         </button>
+          <button className='clear-cart-btn' onClick={() => clearCart(dataDispatch, cart, token)}>
+            Clear Cart
+        </button>
         </ul>
         <div className='order-container'>
           <div className='order-card-container'>

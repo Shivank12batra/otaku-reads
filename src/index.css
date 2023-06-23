@@ -31,3 +31,21 @@ body {
   border-radius: 4px;
 }
 
+.toast-success {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.toast-success .Toastify__progress-bar {
+  background-color: #ffffff;
+}
+
+.toast-error {
+  background-color: red;
+  color: #ffffff;
+}
+
+.toast-progress {
+  background-color: #ffffff;
+}
+

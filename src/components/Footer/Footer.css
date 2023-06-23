@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .footer-header {
@@ -22,12 +22,12 @@
 .media-icon {
     margin: 0 1.5rem;
     font-size: 1.5rem;
-    color: white;
+    color: var(--primary-color);
 }
 
 .media-icons a {
     text-decoration: none;
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .media-icons a:hover {

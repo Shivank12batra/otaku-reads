@@ -1,26 +1,8 @@
-.toast-success {
-  background-color: #4caf50;
-  color: #ffffff;
-}
-
-.toast-success .Toastify__progress-bar {
-  background-color: #ffffff;
-}
-
-.toast-error {
-  background-color: red;
-  color: #ffffff;
-}
-
-.toast-progress {
-  background-color: #ffffff;
-}
-
 .not-found {
-    margin-top: 10rem;
+    margin-top: 15rem;
     text-align: center;
     height: 100vh;
-    background-color: #f8f8f8;
+    background-color: var(--primary-color);
 }
 
 .card-container {
@@ -28,11 +10,12 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f8f8f8;
+    background-color: var(--primary-color);
 }
 
 .custom-card-container {
     margin-top: 7rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,17 +156,17 @@
   .custom-cart-btn {
     border: none;
     color: #fff;
-    background-color: #007bff;
+    background-color: var(--background-btn-color);
   }
 
   .custom-wishlist-btn {
     color: black;
-    background-color: aliceblue;
+    background-color: var(--primary-color);
     border: 1px solid black;
   }
 
   .custom-cart-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--background-btn-hover-color);
   }
 
   .custom-wishlist-btn:hover {
