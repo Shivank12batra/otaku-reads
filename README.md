@@ -2,6 +2,8 @@
 
 Otaku Reads - Your all in one anime bookstore to buy fresh, new age and classical mangas.
 
+[link text](https://otaku-reads.netlify.app/)
+
 ![otaku-reads](src/assets/naruto.jpg)
 ## Table of Contents
 
