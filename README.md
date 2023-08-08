@@ -14,7 +14,7 @@ Otaku Reads - Your all in one anime bookstore to buy fresh, new age and classica
 
 ## Installation and Local Setup
 
-To install and run the Plantique Store locally, follow these steps:
+To install and run Otaku Reads locally, follow these steps:
 
 1. Clone the repository:
 git clone https://github.com/Shivank12batra/otaku-reads
